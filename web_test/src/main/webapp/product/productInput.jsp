@@ -4,10 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>index.jsp</title>
+<title>Insert title here</title>
 </head>
 <body>
-<h3>시작화면</h3>
-<a href='productList.do'>회원목록</a>
+
 </body>
 </html>

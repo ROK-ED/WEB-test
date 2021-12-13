@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.test.controller.Controller;
 
-public class productInsertContoller implements Controller {
+public class ProductDeleteConroller implements Controller {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {

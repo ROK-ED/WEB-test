@@ -14,11 +14,11 @@ import com.test.board.boardInsertContoller;
 import com.test.board.boardListConroller;
 import com.test.board.boardSearchConroller;
 import com.test.board.boardUpdateConroller;
-import com.test.product.productDeleteConroller;
-import com.test.product.productInsertContoller;
-import com.test.product.productListConroller;
-import com.test.product.productSearchConroller;
-import com.test.product.productUpdateConroller;
+import com.test.product.ProductDeleteConroller;
+import com.test.product.ProductInsertContoller;
+import com.test.product.ProductListConroller;
+import com.test.product.ProductSearchConroller;
+import com.test.product.ProductUpdateConroller;
 
 public class FrontController extends HttpServlet {
 	
@@ -30,11 +30,12 @@ public class FrontController extends HttpServlet {
 		list = new HashMap<String, Controller>();
 		
 		//product
-		list.put("/productInsert.do", new productInsertContoller());
-		list.put("/productList.do", new productListConroller());
-		list.put("/productSearch.do", new productSearchConroller());
-		list.put("/productUpdate.do", new productUpdateConroller());
-		list.put("/productDelete.do", new productDeleteConroller());
+		list.put("/productInsert.do", new ProductInsertContoller());
+		list.put("/productList.do", new ProductListConroller());
+		list.put("/productSearch.do", new ProductSearchConroller());
+		list.put("/productUpdate.do", new ProductUpdateConroller());
+		list.put("/productDelete.do", new ProductDeleteConroller());
+		
 		//board
 		list.put("/boardInsert.do", new boardInsertContoller());
 		list.put("/boardList.do", new boardListConroller());
@@ -44,6 +45,7 @@ public class FrontController extends HttpServlet {
 		
 		//로그인
 		list.put("/login.do", new LoginController());
+
 		//로그아웃
 		list.put("/logout.do", new LogoutController());
 		
@@ -51,7 +53,7 @@ public class FrontController extends HttpServlet {
 	
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String url = req.getRequestURI(); // http://localhost:80/P20211208/memberInsert.do
+		String url = req.getRequestURI();
 		String context = req.getContextPath();
 		String path = url.substring(context.length());
 		System.out.println(path);
