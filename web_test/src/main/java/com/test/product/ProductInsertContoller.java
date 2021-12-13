@@ -6,6 +6,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.test.controller.Controller;
 
 public class ProductInsertContoller implements Controller {
@@ -22,6 +24,11 @@ public class ProductInsertContoller implements Controller {
 		String pImage = req.getParameter("pImage");
 		String review = req.getParameter("review");
 
+//		//이미지 1.request 2.저장위치 3.maxSize 4.UTF-8 5.리네임정책
+//		int maxSize = 30 * 1024 * 1024;
+//		String encoding = "UTF-8";
+//		MultipartRequest mRequset = new MultipartRequest(req, "/upload", maxSize, encoding, new DefaultFileRenamePolicy());
+		
 		ProductVO vo = new ProductVO();
 		vo.setpId(pId);
 		vo.setpName(pName);
