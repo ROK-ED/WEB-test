@@ -11,7 +11,8 @@
 	<!-- 상단 menu -->
 	<!--  아이디 확인  -->
 
-	<a href="../index.jsp">첫 페이지로</a>
+	<a href="index.jsp">첫 페이지로</a>
+	<a href="product/productInput.jsp">상품등록</a>
 	<h3>상품목록</h3>
 	<div id="List">
 		<c:forEach var="item" items="${requestScope.productList }">

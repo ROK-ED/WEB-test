@@ -7,6 +7,33 @@ import java.util.List;
 import com.test.dao.DAO;
 
 public class ProductDAO extends DAO {
+	// 상품 등록
+	public ProductVO productInsert(ProductVO vo) {
+		String sql = "insert into product values(?,?,?,?,?,?,?)";
+		connect();
+
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, vo.getpId());
+			psmt.setString(2, vo.getpName());
+			psmt.setInt(3, vo.getOriginPrice());
+			psmt.setInt(4, vo.getSalePrice());
+			psmt.setString(5, vo.getpContent());
+			psmt.setString(6, vo.getpImage());
+			psmt.setDouble(7, vo.getReview());
+
+			int r = psmt.executeUpdate();
+			System.out.println(r + "건 입력");
+		} catch (SQLException e) {
+			e.printStackTrace();
+
+		} finally {
+			disconnect();
+		}
+		return vo;
+
+	}
+
 	// 전체 상품 리스트
 	public List<ProductVO> productList() {
 		List<ProductVO> list = new ArrayList<>();

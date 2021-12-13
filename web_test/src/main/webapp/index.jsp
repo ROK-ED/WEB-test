@@ -8,6 +8,6 @@
 </head>
 <body>
 <h3>시작화면</h3>
-<a href='productList.do'>회원목록</a>
+<a href='productList.do'>전체상품</a>
 </body>
 </html>
