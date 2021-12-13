@@ -9,6 +9,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.test.board.boardDeleteConroller;
+import com.test.board.boardInsertContoller;
+import com.test.board.boardListConroller;
+import com.test.board.boardSearchConroller;
+import com.test.board.boardUpdateConroller;
+import com.test.product.productDeleteConroller;
+import com.test.product.productInsertContoller;
+import com.test.product.productListConroller;
+import com.test.product.productSearchConroller;
+import com.test.product.productUpdateConroller;
+
 public class FrontController extends HttpServlet {
 	
 	HashMap<String, Controller> list = null;

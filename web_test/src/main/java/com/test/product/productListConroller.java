@@ -1,4 +1,4 @@
-package com.test.controller;
+package com.test.product;
 
 import java.io.IOException;
 
@@ -6,7 +6,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class productSearchConroller implements Controller {
+import com.test.controller.Controller;
+
+public class productListConroller implements Controller {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
