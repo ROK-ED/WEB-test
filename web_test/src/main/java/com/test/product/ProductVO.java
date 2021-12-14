@@ -6,24 +6,26 @@ public class ProductVO {
 	private String pName;
 	private int originPrice;
 	private int salePrice;
+	private int pCount;
 	private String pContent;
 	private String pImage;
 	private double review;
-
-	public ProductVO(String pId, String pName, int originPrice, int salePrice, String pContent, String pImage,
-			double review) {
+	
+	public ProductVO(String pId, String pName, int originPrice, int salePrice, int pCount, String pContent,
+			String pImage, double review) {
 		super();
 		this.pId = pId;
 		this.pName = pName;
 		this.originPrice = originPrice;
 		this.salePrice = salePrice;
+		this.pCount = pCount;
 		this.pContent = pContent;
 		this.pImage = pImage;
 		this.review = review;
 	}
 
 	public ProductVO() {
-	
+		
 	}
 
 	public String getpId() {
@@ -58,6 +60,14 @@ public class ProductVO {
 		this.salePrice = salePrice;
 	}
 
+	public int getpCount() {
+		return pCount;
+	}
+
+	public void setpCount(int pCount) {
+		this.pCount = pCount;
+	}
+
 	public String getpContent() {
 		return pContent;
 	}
@@ -85,8 +95,10 @@ public class ProductVO {
 	@Override
 	public String toString() {
 		return "ProductVO [pId=" + pId + ", pName=" + pName + ", originPrice=" + originPrice + ", salePrice="
-				+ salePrice + ", pContent=" + pContent + ", pImage=" + pImage + ", review=" + review + "]";
+				+ salePrice + ", pCount=" + pCount + ", pContent=" + pContent + ", pImage=" + pImage + ", review="
+				+ review + "]";
 	}
+
 	
 	
 }

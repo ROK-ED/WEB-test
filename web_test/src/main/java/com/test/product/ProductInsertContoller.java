@@ -16,24 +16,28 @@ public class ProductInsertContoller implements Controller {
 	public void execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		//사용자 입력 정보 -> 서비스 -> dao -> 결과리턴. -> memverOutput.jsp
 		
-		String pId = req.getParameter("pId");
-		String pName = req.getParameter("pName");
-		String originPrice = req.getParameter("originPrice");
-		String salePrice = req.getParameter("salePrice");
-		String pContent = req.getParameter("pContent");
-		String pImage = req.getParameter("pImage");
-		String review = req.getParameter("review");
 
-//		//이미지 1.request 2.저장위치 3.maxSize 4.UTF-8 5.리네임정책
-//		int maxSize = 30 * 1024 * 1024;
-//		String encoding = "UTF-8";
-//		MultipartRequest mRequset = new MultipartRequest(req, "/upload", maxSize, encoding, new DefaultFileRenamePolicy());
+		//이미지 1.request 2.저장위치 3.maxSize 4.UTF-8 5.리네임정책
+		String saveUrl = req.getRealPath("/upload");
+		int maxSize = 30 * 1024 * 1024;
+		String encoding = "UTF-8";
+		MultipartRequest mRequset = new MultipartRequest(req, saveUrl, maxSize, encoding, new DefaultFileRenamePolicy());
+		
+		String pId = mRequset.getParameter("pId");
+		String pName = mRequset.getParameter("pName");
+		String originPrice = mRequset.getParameter("originPrice");
+		String salePrice = mRequset.getParameter("salePrice");
+		String pCount = mRequset.getParameter("pCount");
+		String pContent = mRequset.getParameter("pContent");
+		String pImage = mRequset.getFilesystemName("pImage");
+		String review = mRequset.getParameter("review");
 		
 		ProductVO vo = new ProductVO();
 		vo.setpId(pId);
 		vo.setpName(pName);
 		vo.setOriginPrice(Integer.parseInt(originPrice));
 		vo.setSalePrice(Integer.parseInt(salePrice));
+		vo.setpCount(Integer.parseInt(pCount));
 		vo.setpContent(pContent);
 		vo.setpImage(pImage);
 		vo.setReview(Double.parseDouble(review));
