@@ -1,14 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>index.jsp</title>
+<title>board Delete</title>
 </head>
 <body>
-<h3>시작화면</h3>
-<a href='productList.do'>전체상품</a>
-<a href='boardList.do'>게시판</a>
+
 </body>
 </html>

@@ -1,4 +1,4 @@
-package com.test.board;
+package com.test.controller;
 
 import java.io.IOException;
 
@@ -6,9 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.test.controller.Controller;
-
-public class boardListConroller implements Controller {
+public class BoardUpdateConroller implements Controller {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {

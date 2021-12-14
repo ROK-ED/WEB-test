@@ -10,8 +10,7 @@
 <body>
 <a href="index.jsp">첫 페이지로</a>
 
-<!-- <form action='../productInsert.do' name="registerProduct"
-			enctype="multipart/form-data" method='post'> -->
+
 <form action='../productInsert.do' method='post'>
 		상품코드: <input type='text' name='pId'><br> 
 		상품명: <input type='text' name='pName'><br> 

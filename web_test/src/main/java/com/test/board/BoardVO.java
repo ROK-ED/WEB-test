@@ -8,7 +8,6 @@ public class BoardVO { //테이블 VO
 	private String bTitle;
 	private String bContent;
 	
-	
 	public int getbId() {
 		return bId;
 	}
@@ -50,8 +49,8 @@ public class BoardVO { //테이블 VO
 		return "BoardVO [bId=" + bId + ", cId=" + cId + ", bDate=" + bDate + ", bPw=" + bPw + ", bTitle=" + bTitle
 				+ ", bContent=" + bContent + "]";
 	}
+	
 
-	
-	
+
 	
 }

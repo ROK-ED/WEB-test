@@ -21,7 +21,6 @@ public class ProductListConroller implements Controller {
 		
 		
 		req.getRequestDispatcher("product/productList.jsp").forward(req, res);
-
 	}
 
 }

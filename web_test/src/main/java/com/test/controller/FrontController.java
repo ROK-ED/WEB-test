@@ -9,11 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.test.board.boardDeleteConroller;
-import com.test.board.boardInsertContoller;
-import com.test.board.boardListConroller;
-import com.test.board.boardSearchConroller;
-import com.test.board.boardUpdateConroller;
+import com.test.board.BoardDeleteConroller;
+import com.test.board.BoardInsertContoller;
+import com.test.board.BoardListConroller;
+import com.test.board.BoardSearchConroller;
 import com.test.product.ProductDeleteConroller;
 import com.test.product.ProductInsertContoller;
 import com.test.product.ProductListConroller;
@@ -37,11 +36,11 @@ public class FrontController extends HttpServlet {
 		list.put("/productDelete.do", new ProductDeleteConroller());
 		
 		//board
-		list.put("/boardInsert.do", new boardInsertContoller());
-		list.put("/boardList.do", new boardListConroller());
-		list.put("/boardSearch.do", new boardSearchConroller());
-		list.put("/boardUpdate.do", new boardUpdateConroller());
-		list.put("/boardDelete.do", new boardDeleteConroller());
+		list.put("/boardInsert.do", new BoardInsertContoller());
+		list.put("/boardList.do", new BoardListConroller());
+		list.put("/boardSearch.do", new BoardSearchConroller());
+		list.put("/boardUpdate.do", new BoardUpdateConroller());
+		list.put("/boardDelete.do", new BoardDeleteConroller());
 		
 		//로그인
 		list.put("/login.do", new LoginController());
