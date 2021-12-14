@@ -14,8 +14,7 @@ public class ProductInsertContoller implements Controller {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		//사용자 입력 정보 -> 서비스 -> dao -> 결과리턴. -> memverOutput.jsp
-		
+
 
 		//이미지 1.request 2.저장위치 3.maxSize 4.UTF-8 5.리네임정책
 		String saveUrl = req.getRealPath("/upload");
@@ -23,6 +22,7 @@ public class ProductInsertContoller implements Controller {
 		String encoding = "UTF-8";
 		MultipartRequest mRequset = new MultipartRequest(req, saveUrl, maxSize, encoding, new DefaultFileRenamePolicy());
 		
+		//사용자 입력 정보 -> 서비스 -> dao -> 결과리턴. -> memverOutput.jsp
 		String pId = mRequset.getParameter("pId");
 		String pName = mRequset.getParameter("pName");
 		String originPrice = mRequset.getParameter("originPrice");

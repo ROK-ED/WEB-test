@@ -8,6 +8,58 @@ import java.util.List;
 import com.test.dao.DAO;
 
 public class ProductDAO extends DAO {
+	// 상품 삭제
+	public ProductVO productDelete(String pId) {
+		ProductVO vo = productSearch(pId);
+		
+		String sql = "delete from product where pId = ?";
+		connect();
+		
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, pId);
+			
+			int r = psmt.executeUpdate();
+			System.out.println(r + "건 삭제.");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			disconnect();
+		}
+		return vo;
+	}
+	// 상품 수정
+	public ProductVO productUpdate(ProductVO vo) {
+		String sql = "update product "//
+				+ "set pName = ?,"//
+				+ "originPrice = ?,"//
+				+ "salePrice = ?,"//
+				+ "pCount = ?,"//
+				+ "pContent = ?,"//
+				+ "pImage = ?,"//
+				+ "review = ?"//
+				+ "where pId = ?";
+		connect();
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, vo.getpName());
+			psmt.setInt(2, vo.getOriginPrice());
+			psmt.setInt(3, vo.getSalePrice());
+			psmt.setInt(4, vo.getpCount());
+			psmt.setString(5, vo.getpContent());
+			psmt.setString(6, vo.getpImage());
+			psmt.setDouble(7, vo.getReview());
+			psmt.setString(8, vo.getpId());
+			
+			int r = psmt.executeUpdate();
+			System.out.println(r + "건 변경");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			disconnect();
+		}
+		return vo;
+	}
 	// 상품 상세정보
 	public ProductVO productSearch(String pId) {
 		String sql = "select * from product where pId = ?";

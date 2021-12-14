@@ -26,14 +26,16 @@ public class ProductSearchConroller implements Controller {
 		
 		if (job.equals("search")) {
 			System.out.println("search");
+						
 			req.getRequestDispatcher("product/productSearchOutPut.jsp").forward(req, res);
 
 		} else if (job.equals("update")) {
+			System.out.println("update");
 
-			//req.getRequestDispatcher("product/productUpdateForm.jsp").forward(req, res);
+			req.getRequestDispatcher("product/productUpdateForm.jsp").forward(req, res);
 
 		} else if (job.equals("delete")) {
-
+			System.out.println("delete");
 			//req.getRequestDispatcher("product/productDeleteForm.jsp").forward(req, res);
 
 		}
