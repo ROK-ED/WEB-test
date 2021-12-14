@@ -12,7 +12,32 @@ public class ProductSearchConroller implements Controller {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		// 값을 읽고 조회가능.
+		// search 조회페이지, update 수정페이지, delete 삭제페이지
+		String pId = req.getParameter("pId");
+		String job = req.getParameter("job");
+		System.out.println(pId);
+		ProductService service = new ProductService();
+		
+		ProductVO vo = service.searchOne(pId);
+		System.out.println(vo.getpName());
+		
+		req.setAttribute("product", vo);
+		
+		if (job.equals("search")) {
+			System.out.println("search");
+			req.getRequestDispatcher("product/productSearchOutPut.jsp").forward(req, res);
+
+		} else if (job.equals("update")) {
+
+			//req.getRequestDispatcher("product/productUpdateForm.jsp").forward(req, res);
+
+		} else if (job.equals("delete")) {
+
+			//req.getRequestDispatcher("product/productDeleteForm.jsp").forward(req, res);
+
+		}
+		
 
 	}
 
