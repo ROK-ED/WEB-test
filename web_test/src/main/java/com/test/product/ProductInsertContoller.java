@@ -49,7 +49,7 @@ public class ProductInsertContoller implements Controller {
 		
 		req.setAttribute("product", vo);
 		
-		req.getRequestDispatcher("product/productInput.jsp").forward(req, res);
+		req.getRequestDispatcher("product/productSearchOutPut.jsp").forward(req, res);
 		
 	}
 

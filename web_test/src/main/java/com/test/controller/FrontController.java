@@ -1,5 +1,6 @@
 package com.test.controller;
 
+
 import java.io.IOException;
 import java.util.HashMap;
 
@@ -13,7 +14,7 @@ import com.test.board.BoardDeleteConroller;
 import com.test.board.BoardInsertContoller;
 import com.test.board.BoardListConroller;
 import com.test.board.BoardSearchConroller;
-import com.test.product.ProductDeleteConroller;
+//import com.test.product.ProductDeleteConroller;
 import com.test.product.ProductInsertContoller;
 import com.test.product.ProductListConroller;
 import com.test.product.ProductSearchConroller;
@@ -33,7 +34,7 @@ public class FrontController extends HttpServlet {
 		list.put("/productList.do", new ProductListConroller());
 		list.put("/productSearch.do", new ProductSearchConroller());
 		list.put("/productUpdate.do", new ProductUpdateConroller());
-		list.put("/productDelete.do", new ProductDeleteConroller());
+		//list.put("/productDelete.do", new ProductDeleteConroller());
 		
 		//board
 		list.put("/boardInsert.do", new BoardInsertContoller());
