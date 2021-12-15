@@ -5,6 +5,12 @@ import java.util.List;
 public class BoardService {
 	BoardDAO dao = new BoardDAO();
 	
+	//게시글 수정
+	public BoardVO update(BoardVO vo) {
+		return dao.boardUpdate(vo);
+	}
+	
+	
 	//상세 설명
 	public BoardVO search(int bId) {
 		return dao.boardSearch(bId);

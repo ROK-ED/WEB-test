@@ -7,6 +7,32 @@ import java.util.List;
 import com.test.dao.DAO;
 
 public class BoardDAO extends DAO{
+	//게시글 수정
+	public BoardVO boardUpdate(BoardVO vo) {
+		String sql = "update board "
+				+ " set bTitle = ?,"
+				+ " bContent = ?"
+				+ " where bId = ?";
+		
+		try {
+			psmt=conn.prepareStatement(sql);
+			psmt.setString(1, vo.getbTitle());
+			psmt.setString(2, vo.getbContent());
+			psmt.setInt(3, vo.getbId());
+			
+			int r = psmt.executeUpdate();
+			System.out.println(r+"건 변경");
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+		} finally {
+			disconnect();
+		}
+		
+		
+		return vo;
+	}
+	
 	
 	
 	//게시글 상세
@@ -17,7 +43,7 @@ public class BoardDAO extends DAO{
 		try {
 			psmt=conn.prepareStatement(sql);
 			psmt.setInt(1, bId);
-			
+			rs=psmt.executeQuery();
 			if(rs.next()) {
 				BoardVO vo = new BoardVO();
 				vo.setbContent(rs.getString("bContent"));
