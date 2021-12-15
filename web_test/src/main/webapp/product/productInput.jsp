@@ -8,7 +8,7 @@
 <title>product/productInput.jsp</title>
 </head>
 <body>
-<a href="../index.jsp">첫 페이지로</a>
+<jsp:include page="../menu.jsp"></jsp:include>
 
 <form action='../productInsert.do' name="registerProduct"
 			enctype="multipart/form-data" method='post'>

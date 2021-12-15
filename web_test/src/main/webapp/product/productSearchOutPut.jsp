@@ -8,7 +8,8 @@
 <title>product/productSearchOutPut.jsp</title>
 </head>
 <body>
-	<a href="index.jsp">첫 페이지로</a>
+	<jsp:include page="../menu.jsp"></jsp:include>
+	
 	<h3>제품 상세정보</h3>
 		<form action="productSearch.do" method='get'>
 			<input type='hidden' name='pId' value='${product.pId }'> 

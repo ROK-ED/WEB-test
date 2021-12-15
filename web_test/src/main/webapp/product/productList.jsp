@@ -8,12 +8,10 @@
 <title>product/productList.jsp</title>
 </head>
 <body>
-	<!-- 상단 menu -->
+	<jsp:include page="../menu.jsp"></jsp:include>
 	<!--  아이디 확인  -->
 
-	<a href="index.jsp">첫 페이지로</a>
-	<a href="product/productInput.jsp">상품등록(관리자)</a>
-	<!-- <a href= "product/productSearch.jsp">상품관리(관리자)</a> -->
+	
 
 	<h3>상품목록</h3>
 	<div id="List">
