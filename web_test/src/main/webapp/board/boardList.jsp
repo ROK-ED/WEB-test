@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +8,7 @@
 <title>board/boardList.jsp</title>
 </head>
 <body>
-<a href="board/boardInput.jsp">상품등록</a>
+	<a href="board/boardInput.jsp">상품등록</a>
 	<h1>게시판</h1>
 	<table border='1'>
 		<thead>
@@ -17,19 +17,24 @@
 				<th>제목</th>
 				<th>작성자</th>
 				<th>작성일자</th>
+				<th>상세보기</th>
 			</tr>
 		</thead>
 		<tbody>
-		 	<c:forEach var="item" items="${requestScope.boardList }">
-		 	
-				<tr style = "cursor:'pointer'" onclick = "">
+			<c:forEach var="item" items="${requestScope.boardList }">
+				<form action="boardSearch.do" method='get'>
+				<tr>
 					<td>${item.bId }</td>
 					<td>${item.bTitle }</td>
 					<td>${item.cId }</td>
 					<td>${item.bDate }</td>
+					
+					<td><input type='submit' value='상세보기'></td>
+					<td><input type='hidden' name = "bId" value='${item.bId }'></td>
+					<td><input type='hidden' name = 'job' value='search'></td>
 				</tr>
-				 			
-			</c:forEach> 
+				</form>
+			</c:forEach>
 		</tbody>
 	</table>
 </body>
