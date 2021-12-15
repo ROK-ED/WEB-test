@@ -8,20 +8,22 @@
 <title>boardSearch</title>
 </head>
 <body>
-
+<a href="index.jsp">첫 페이지로</a>
 <form>
+
+	<h1>게시글상세보기</h1>
+		<div>게시번호: ${board.bId }</div>
+		<div>제목:${board.bTitle }</div>
+		<div>게시자:${board.cId } </div>
+		<div>게시일${board.bDate }: </div>
+		
 	<div>
-		<div>게시번호: <%=request.getAttribute("bId") %></div>
-		<div>제목: <%=request.getAttribute("bTitle") %></div>
-		<div>게시자:<%=request.getAttribute("cId") %> </div>
-		<div>게시일:<%=request.getAttribute("bDate") %> </div>
-	</div>	
-	<div>
-		<%=request.getAttribute("bContent") %>
+		내용:${board.bContent }
 	</div>
 	
 		비밀번호: <input type='password' name='bPw'>
-		
+		<input type="hidden" name='bId' vlaue='${board.bId }'>
+		<input type="hidden" name='bPw' vlaue='${board.bPw }'>
 		<input type='submit' value='수정'>
 		<input type='submit' value='삭제'>
 

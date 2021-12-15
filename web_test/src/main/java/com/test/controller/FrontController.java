@@ -13,6 +13,7 @@ import com.test.board.BoardDeleteConroller;
 import com.test.board.BoardInsertContoller;
 import com.test.board.BoardListConroller;
 import com.test.board.BoardSearchConroller;
+import com.test.board.BoardUpdateConroller;
 import com.test.product.ProductDeleteConroller;
 import com.test.product.ProductInsertContoller;
 import com.test.product.ProductListConroller;

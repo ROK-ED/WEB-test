@@ -13,26 +13,32 @@ public class BoardSearchConroller implements Controller {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		
+		
+		String job = req.getParameter("job");		
 		String bId = req.getParameter("bId");
-		String cId = req.getParameter("cId");
-		String bDate = req.getParameter("bDate");
-		String bPw = req.getParameter("bPw");
-		String bTitle = req.getParameter("bTitle");
-		String bContent = req.getParameter("bContent");
-		
-		BoardVO vo = new BoardVO();
-		vo.setbContent(bContent);
-		vo.setbDate(bDate);
-		vo.setbId(Integer.parseInt(bId));
-		vo.setbPw(bPw);
-		vo.setbTitle(bTitle);
-		vo.setcId(cId);
-		
+		System.out.println(bId);
 		BoardService service = new BoardService();
 		
-		req.setAttribute("board", vo);
-		req.getRequestDispatcher("board/boardSearch.jsp").forward(req, res);
 		
+		BoardVO vo = service.search(Integer.parseInt(bId)); 
+		req.setAttribute("board", vo);
+		System.out.println(vo.getbId()); 
+
+		
+		
+		if (job.equals("search")) {
+			System.out.println("search");
+			req.getRequestDispatcher("board/boardSearch.jsp").forward(req, res);
+
+		} else if (job.equals("update")) {
+			req.getRequestDispatcher("board/boardDeleteForm.jsp").forward(req, res);
+
+
+		} else if (job.equals("delete")) {
+
+			req.getRequestDispatcher("board/boardDeleteForm.jsp").forward(req, res);
+
+		}
 		
 	}
 
