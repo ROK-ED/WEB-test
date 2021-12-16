@@ -1,5 +1,7 @@
 package com.test.controller;
 
+
+
 import java.io.IOException;
 import java.util.HashMap;
 
@@ -13,8 +15,15 @@ import com.test.board.BoardDeleteConroller;
 import com.test.board.BoardInsertContoller;
 import com.test.board.BoardListConroller;
 import com.test.board.BoardSearchConroller;
+
+//import com.test.product.ProductDeleteConroller;
+
 import com.test.board.BoardUpdateConroller;
-import com.test.product.ProductDeleteConroller;
+import com.test.customer.CustomerDeleteConroller;
+import com.test.customer.CustomerInsertContoller;
+import com.test.customer.CustomerListConroller;
+import com.test.customer.CustomerSearchConroller;
+import com.test.customer.CustomerUpdateConroller;
 import com.test.product.ProductInsertContoller;
 import com.test.product.ProductListConroller;
 import com.test.product.ProductSearchConroller;
@@ -34,7 +43,7 @@ public class FrontController extends HttpServlet {
 		list.put("/productList.do", new ProductListConroller());
 		list.put("/productSearch.do", new ProductSearchConroller());
 		list.put("/productUpdate.do", new ProductUpdateConroller());
-		list.put("/productDelete.do", new ProductDeleteConroller());
+		//list.put("/productDelete.do", new ProductDeleteConroller());
 		
 		//board
 		list.put("/boardInsert.do", new BoardInsertContoller());
@@ -42,6 +51,13 @@ public class FrontController extends HttpServlet {
 		list.put("/boardSearch.do", new BoardSearchConroller());
 		list.put("/boardUpdate.do", new BoardUpdateConroller());
 		list.put("/boardDelete.do", new BoardDeleteConroller());
+		
+		//customer
+		list.put("/customerInsert.do", new CustomerInsertContoller());
+		list.put("/customerList.do", new CustomerListConroller());
+		list.put("/customerSearch.do", new CustomerSearchConroller());
+		list.put("/customerUpdate.do", new CustomerUpdateConroller());
+		list.put("/customerDelete.do", new CustomerDeleteConroller());
 		
 		//로그인
 		list.put("/login.do", new LoginController());

@@ -8,7 +8,8 @@
 <title>product/productUpdateForm.jsp</title>
 </head>
 <body>
-<a href="index.jsp">첫 페이지로</a>
+<jsp:include page="../menu.jsp"></jsp:include>
+
 <form action='productUpdate.do' name="registerProduct"
 			enctype="multipart/form-data" method='post'>
 		상품코드: <input type="hidden" name='pId' value='${product.pId }'>${product.pId }<br>
