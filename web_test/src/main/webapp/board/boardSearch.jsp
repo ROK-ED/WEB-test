@@ -21,20 +21,20 @@
 
 		비밀번호: <input type='password' name='bPw'>
 		<form action="boardSearch.do" method='get'>
-			<input type='hidden' name="bId" value='${board.bId }'>
-			<input type='hidden' name="bPw" value='${board.bPw }'>
-			<input type='hidden' name='job' value='update'>
-			<input type='submit' value='수정'>
+			<input type='hidden' name="bId" value='${board.bId }'> <input
+				type='hidden' name="bPw" value='${board.bPw }'> <input
+				type='hidden' name='job' value='update'> <input
+				type='submit' value='수정'>
 		</form>
 		<form action="boardSearch.do" method='get'>
-			<input type='hidden' name="bId" value='${board.bId }'>
-			<input type='hidden' name="bPw" value='${board.bPw }'>
-			<input type='hidden' name='job' value='delete'>
-			<input type='submit' value='삭제'>
+			<input type='hidden' name="bId" value='${board.bId }'> <input
+				type='hidden' name="bPw" value='${board.bPw }'> <input
+				type='hidden' name='job' value='delete'> <input
+				type='submit' value='삭제'>
 
 			<div>댓글</div>
 			<table>
-				<thead>
+			<thead>
 					<tr>
 						<td>댓글순번</td>
 						<td>댓글내용</td>
@@ -43,32 +43,33 @@
 					</tr>
 				</thead>
 				<tbody>
-				<form>
-					<c:forEach var="cmitem" items="${requestScope.cmList }">
-					<tr>
-					<td>${cmitem.cmId }</td>
-					<td>${cmitem.cmContent }</td>
-					<td>${cmitem.cId }</td>
-					<td>${cmitem.cmDate }</td>
-					</tr>
-					</c:forEach>
-				</form>
-				<form>
-				<input type ="hidden" name='job_c' value='update'>
-				<input type = 'submit' value="댓글수정">
-				</form>
-				<form>
-				<input type ="hidden" name='job_c' value='delete'>
-				<input type = 'submit' value='댓글삭제'>
-				</form>
+					<form>
+						testF
+						<c:forEach var="cmitem" items="${requestScope.cmList }">
+							<tr>
+								<td>${cmitem.cmId }</td>
+								<td>${cmitem.cmContent }</td>
+								<td>${cmitem.cId }</td>
+								<td>${cmitem.cmDate }</td>
+							</tr>
+						</c:forEach>
+					</form>
+					<form>
+						<input type="hidden" name='job_c' value='update'> <input
+							type='submit' value="댓글수정">
+					</form>
+					<form>
+						<input type="hidden" name='job_c' value='delete'> <input
+							type='submit' value='댓글삭제'><br>
+					</form>
 				</tbody>
 				<form>
-				<input type='text' name='cmContent'>
-				<input type="hidden" name='job_c' value='insert'>
-				<input type='submit' value='댓글등록'>
+					<input type='text' name='cmContent'> <input type="hidden"
+						name='job_c' value='insert'> <input type='submit'
+						value='댓글등록'>
 				</form>
 			</table>
-			
+
 		</form>
 </body>
 </html>

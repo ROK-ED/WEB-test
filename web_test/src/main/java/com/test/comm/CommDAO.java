@@ -8,6 +8,7 @@ import com.test.dao.DAO;
 
 public class CommDAO extends DAO{
 	
+	//댓글등록
 	public CommVO commInsert(CommVO vo) {
 		String sql = "insert into comm(cmId, tId, cmContent, cId, cPw) values (?,?,?,?,?)";
 		connect();
@@ -101,15 +102,16 @@ public class CommDAO extends DAO{
 			rs=stmt.executeQuery(sql);
 			
 			while(rs.next()) {
-				CommVO vo = new CommVO();
-				vo.setcId(rs.getString("cId"));
-				vo.setCmContent(rs.getString("cmContent"));
-				vo.setCmDate(rs.getString("cmDate "));
-				vo.setCmId(rs.getInt("cmId "));
-				vo.setcPw(rs.getString("cPw "));
-				vo.settId(rs.getInt("tId"));
+				CommVO cmvo = new CommVO();
+				
+				cmvo.setCmId(rs.getInt("cmId"));
+				cmvo.settId(rs.getInt("tId"));
+				cmvo.setCmContent(rs.getString("cmContent"));
+				cmvo.setcId(rs.getString("cId"));
+				cmvo.setcPw(rs.getString("cPw"));
+				cmvo.setCmDate(rs.getString("cmDate"));
 		
-				list.add(vo);
+				list.add(cmvo);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

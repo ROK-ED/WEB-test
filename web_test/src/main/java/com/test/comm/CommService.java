@@ -5,6 +5,10 @@ import java.util.List;
 public class CommService {
 	CommDAO dao = new CommDAO();
 	
+	public CommVO insert(CommVO vo) {
+		return dao.commInsert(vo);
+	}
+	
 	//게시글 수정
 	public CommVO update(CommVO vo) {
 		return dao.commUpdate(vo);

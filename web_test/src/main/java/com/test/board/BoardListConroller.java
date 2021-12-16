@@ -20,7 +20,6 @@ public class BoardListConroller implements Controller {
 		
 		req.setAttribute("boardList", list);
 		
-		
 		req.getRequestDispatcher("board/boardList.jsp").forward(req, res);
 		
 		
