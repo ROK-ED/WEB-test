@@ -2,21 +2,22 @@ package com.test.comm;
 
 public class CommVO {
 	private int cmId;
-	private String tId;
+	private int tId;
 	private String cmContent;
 	private String cId;
 	private String cPw;
 	private String cmDate;
+	
 	public int getCmId() {
 		return cmId;
 	}
 	public void setCmId(int cmId) {
 		this.cmId = cmId;
 	}
-	public String gettId() {
+	public int gettId() {
 		return tId;
 	}
-	public void settId(String tId) {
+	public void settId(int tId) {
 		this.tId = tId;
 	}
 	public String getCmContent() {
@@ -43,12 +44,11 @@ public class CommVO {
 	public void setCmDate(String cmDate) {
 		this.cmDate = cmDate;
 	}
+	
 	@Override
 	public String toString() {
 		return "CommVO [cmId=" + cmId + ", tId=" + tId + ", cmContent=" + cmContent + ", cId=" + cId + ", cPw=" + cPw
 				+ ", cmDate=" + cmDate + "]";
 	}
-	
-	
-	
+
 }

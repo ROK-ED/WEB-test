@@ -19,6 +19,8 @@ public class BoardListConroller implements Controller {
 		List<BoardVO> list = service.searchAll();
 		
 		req.setAttribute("boardList", list);
+		
+		
 		req.getRequestDispatcher("board/boardList.jsp").forward(req, res);
 		
 		
