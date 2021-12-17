@@ -55,18 +55,18 @@
 						</c:forEach>
 					</form>
 					<form>
-						<input type="hidden" name='job_c' value='update'> <input
-							type='submit' value="댓글수정">
+						<input type="hidden" name='job_c' value='update'>
+						<input type='submit' value="댓글수정">
 					</form>
 					<form>
-						<input type="hidden" name='job_c' value='delete'> <input
-							type='submit' value='댓글삭제'><br>
+						<input type="hidden" name='job_c' value='delete'>
+						<input type='submit' value='댓글삭제'><br>
 					</form>
 				</tbody>
 				<form>
-					<input type='text' name='cmContent'> <input type="hidden"
-						name='job_c' value='insert'> <input type='submit'
-						value='댓글등록'>
+					<input type='text' name='cmContent'>
+					<input type="hidden" name='job_c' >
+					<input type='submit' value='댓글등록'>
 				</form>
 			</table>
 

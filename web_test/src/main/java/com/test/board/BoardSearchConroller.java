@@ -34,11 +34,11 @@ public class BoardSearchConroller implements Controller {
 		CommService cmService = new CommService();
 		List<CommVO> cmList = cmService.searchAll();
 		req.setAttribute("commList", cmList);
-		System.out.println(cmList);
-		req.getRequestDispatcher("board/boardSearch.jsp").forward(req, res);
+		
 		
 		if (job.equals("search")) {
 			System.out.println("search");
+			req.setAttribute("commList", cmList);
 			req.getRequestDispatcher("board/boardSearch.jsp").forward(req, res);
 
 		} else if (job.equals("update")) {
@@ -68,20 +68,20 @@ public class BoardSearchConroller implements Controller {
 		String cPw = req.getParameter("cPw");
 		String cmDate = req.getParameter("cmDate");
 		
-		if(job_c.equals("insert")) {
-			System.out.println("insert");
-			req.setAttribute("comm", cmService.insert(cmvo));
-			req.getRequestDispatcher("board/boardSearch.jsp").forward(req, res);
-			
-		} else if(job_c.equals("update")) {
-			System.out.println("update");
-			req.setAttribute("comm", cmService.update(cmvo));
-			req.getRequestDispatcher("board/boardSearch.jsp").forward(req, res);
-		} else if(job_c.equals("delete")) {
-			System.out.println("delete");
-			req.setAttribute("comm", cmService.delete(Integer.parseInt(cmId)));
-			req.getRequestDispatcher("board/boardSearch.jsp").forward(req, res);
-		}
+//		if(job_c.equals("insert")) {
+//			System.out.println("insert");
+//			req.setAttribute("comm", cmService.insert(cmvo));
+//			req.getRequestDispatcher("board/boardSearch.jsp").forward(req, res);
+//			
+//		} else if(job_c.equals("update")) {
+//			System.out.println("update");
+//			req.setAttribute("comm", cmService.update(cmvo));
+//			req.getRequestDispatcher("board/boardSearch.jsp").forward(req, res);
+//		} else if(job_c.equals("delete")) {
+//			System.out.println("delete");
+//			req.setAttribute("comm", cmService.delete(Integer.parseInt(cmId)));
+//			req.getRequestDispatcher("board/boardSearch.jsp").forward(req, res);
+//		}
 
 		
 		
