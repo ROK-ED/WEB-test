@@ -16,13 +16,13 @@ public class CommService {
 	
 	
 	//게시글 삭제
-	public CommVO delete(int cmId) {
-		return dao.commDelete(cmId);
+	public CommVO delete(int cmId, String cPw) {
+		return dao.commDelete(cmId,cPw);
 	}
 	
 	//게시글 전체조회
-	public List<CommVO> searchAll(){
-		return dao.commList();
+	public List<CommVO> searchAll(int tId){
+		return dao.commList(tId);
 	}
 	
 }

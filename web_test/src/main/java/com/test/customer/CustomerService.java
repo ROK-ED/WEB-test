@@ -23,5 +23,4 @@ public class CustomerService {
 	public CustomerVO login(String cId, String cPw) {
 		return dao.loginCheck(cId, cPw);
 	}
-
 }

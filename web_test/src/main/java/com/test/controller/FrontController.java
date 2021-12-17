@@ -19,6 +19,7 @@ import com.test.board.BoardSearchConroller;
 //import com.test.product.ProductDeleteConroller;
 
 import com.test.board.BoardUpdateConroller;
+import com.test.comm.CommInsertController;
 import com.test.customer.CustomerDeleteConroller;
 import com.test.customer.CustomerInsertContoller;
 import com.test.customer.CustomerListConroller;
@@ -58,6 +59,16 @@ public class FrontController extends HttpServlet {
 		list.put("/customerSearch.do", new CustomerSearchConroller());
 		list.put("/customerUpdate.do", new CustomerUpdateConroller());
 		list.put("/customerDelete.do", new CustomerDeleteConroller());
+		
+		//customer
+		list.put("/customerInsert.do", new CustomerInsertContoller());
+		list.put("/customerList.do", new CustomerListConroller());
+		list.put("/customerSearch.do", new CustomerSearchConroller());
+		list.put("/customerUpdate.do", new CustomerUpdateConroller());
+		list.put("/customerDelete.do", new CustomerDeleteConroller());
+		
+		//comm
+		list.put("/commInsert.do", new CommInsertController());
 		
 		//로그인
 		list.put("/login.do", new LoginController());

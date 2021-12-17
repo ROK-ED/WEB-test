@@ -27,13 +27,11 @@ public class CustomerSearchConroller implements Controller {
 		
 		if (job.equals("search")) {
 			System.out.println("search");
-						
 			req.getRequestDispatcher("customer/customerSearchOutPut.jsp").forward(req, res);
 
 		} else if (job.equals("update")) {
 			System.out.println("update");
 
-//			req.getRequestDispatcher("product/productUpdateForm.jsp").forward(req, res);
 
 		} else if (job.equals("delete")) {
 			System.out.println("delete");

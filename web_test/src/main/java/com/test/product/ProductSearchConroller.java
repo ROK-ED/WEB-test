@@ -1,6 +1,7 @@
 package com.test.product;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -36,7 +37,15 @@ public class ProductSearchConroller implements Controller {
 
 		} else if (job.equals("delete")) {
 			System.out.println("delete");
-			//req.getRequestDispatcher("product/productDeleteForm.jsp").forward(req, res);
+			// 삭제
+			req.setAttribute("product", service.delete(pId));
+			
+			// 삭제 후 전체 리스트로
+			List<ProductVO> list = service.searchAll();
+			
+			req.setAttribute("productList", list);
+			
+			req.getRequestDispatcher("product/productList.jsp").forward(req, res);
 
 		}
 		

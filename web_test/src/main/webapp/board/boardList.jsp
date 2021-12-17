@@ -8,7 +8,7 @@
 <title>board/boardList.jsp</title>
 </head>
 <body>
-	<a href="board/boardInput.jsp">상품등록</a>
+	<a href="board/boardInput.jsp">게시글 작성</a>
 	<h1>게시판</h1>
 	<table border='1'>
 		<thead>
@@ -22,6 +22,7 @@
 		</thead>
 		<tbody>
 			<c:forEach var="item" items="${requestScope.boardList }">
+			console.log(item);
 				<form action="boardSearch.do" method='get'>
 				<tr>
 					<td>${item.bId }</td>
@@ -30,6 +31,7 @@
 					<td>${item.bDate }</td>
 					
 					<td><input type='submit' value='상세보기'></td>
+				<%-- 	<td><input type='hidden' name="tId" value='${item.tId }'></td> --%>
 					<td><input type='hidden' name = "bId" value='${item.bId }'></td>
 					<td><input type='hidden' name = 'job' value='search'></td>
 				</tr>

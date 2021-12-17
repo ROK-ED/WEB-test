@@ -29,8 +29,6 @@ public class CommDAO extends DAO{
 		} finally {
 			disconnect();
 		}
-		
-
 		return vo;
 	}
 	
@@ -69,14 +67,15 @@ public class CommDAO extends DAO{
 	
 	
 	//댓글 삭제
-	public CommVO commDelete(int cmId) {
+	public CommVO commDelete(int cmId, String cPw) {
 		CommVO vo = new CommVO();
-		String sql = "delete from comm where cmId = ?";
+		String sql = "delete from comm where cmId = ? and cPw = ?";
 		connect();
 		
 		try {
 			psmt=conn.prepareStatement(sql);
 			psmt.setInt(1, cmId);
+			psmt.setString(2, cPw);
 			int r = psmt.executeUpdate();
 			System.out.println(r+"건 삭제");
 			
@@ -92,18 +91,18 @@ public class CommDAO extends DAO{
 	
 	
 	//댓글 전체조회
-	public List<CommVO> commList() {
+	public List<CommVO> commList(int tId) {
 		List<CommVO> list = new ArrayList<>();
-		String sql = "select * from comm order by 1";
+		String sql = "select * from comm where tId = ? order by 1";
 		connect();
 		
 		try {
-			stmt = conn.createStatement();
-			rs=stmt.executeQuery(sql);
-			
+			psmt = conn.prepareStatement(sql);
+			CommVO cmvo = new CommVO();
+			psmt.setInt(1, tId);
+			rs = psmt.executeQuery();
 			while(rs.next()) {
-				CommVO cmvo = new CommVO();
-				
+
 				cmvo.setCmId(rs.getInt("cmId"));
 				cmvo.settId(rs.getInt("tId"));
 				cmvo.setCmContent(rs.getString("cmContent"));
@@ -112,6 +111,7 @@ public class CommDAO extends DAO{
 				cmvo.setCmDate(rs.getString("cmDate"));
 		
 				list.add(cmvo);
+			System.out.println(cmvo);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
