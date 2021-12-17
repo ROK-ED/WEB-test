@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<a href="index.jsp">첫 페이지로</a>
 <form action ='../boardInsert.do' method='post'>
 	게시번호: <input type='text' name='bId'><br> <!-- 자동생성?  -->
 	고객아이디: <input type='text' name='cId'><br>  <!-- 로그인하면 가져오는기능 -->

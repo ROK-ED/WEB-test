@@ -50,7 +50,14 @@ public class FrontController extends HttpServlet {
 		list.put("/boardList.do", new BoardListConroller());
 		list.put("/boardSearch.do", new BoardSearchConroller());
 		list.put("/boardUpdate.do", new BoardUpdateConroller());
-		list.put("/boardDelete.do", new BoardDeleteConroller());
+//		list.put("/boardDelete.do", new BoardDeleteConroller());
+		
+		//customer
+		list.put("/customerInsert.do", new CustomerInsertContoller());
+		list.put("/customerList.do", new CustomerListConroller());
+		list.put("/customerSearch.do", new CustomerSearchConroller());
+		list.put("/customerUpdate.do", new CustomerUpdateConroller());
+		list.put("/customerDelete.do", new CustomerDeleteConroller());
 		
 		//customer
 		list.put("/customerInsert.do", new CustomerInsertContoller());
