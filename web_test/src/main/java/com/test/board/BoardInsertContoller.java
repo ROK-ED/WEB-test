@@ -1,6 +1,7 @@
 package com.test.board;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -35,7 +36,11 @@ public class BoardInsertContoller implements Controller {
 		service.insert(vo);
 		
 		req.setAttribute("board", vo);
-		req.getRequestDispatcher("board/boardInput.jsp").forward(req, res);
+		//
+		List<BoardVO> list = service.searchAll();
+		req.setAttribute("boardList", list);
+		
+		req.getRequestDispatcher("board/boardList.jsp").forward(req, res);
 		
 	}
 

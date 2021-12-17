@@ -3,6 +3,7 @@ package com.test.controller;
 
 
 
+
 import java.io.IOException;
 import java.util.HashMap;
 
@@ -19,6 +20,7 @@ import com.test.board.BoardSearchConroller;
 //import com.test.product.ProductDeleteConroller;
 
 import com.test.board.BoardUpdateConroller;
+import com.test.comm.CommInsertController;
 import com.test.customer.CustomerInsertContoller;
 import com.test.customer.CustomerListConroller;
 import com.test.customer.CustomerSearchConroller;
@@ -57,6 +59,9 @@ public class FrontController extends HttpServlet {
 		list.put("/customerSearch.do", new CustomerSearchConroller());
 		list.put("/customerUpdate.do", new CustomerUpdateConroller());
 			
+		
+		//comm
+		list.put("/commInsert.do", new CommInsertController());
 		
 		//로그인
 		list.put("/login.do", new LoginController());

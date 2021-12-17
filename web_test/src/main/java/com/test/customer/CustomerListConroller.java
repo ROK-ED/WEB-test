@@ -13,12 +13,12 @@ public class CustomerListConroller implements Controller {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		//db조회, 조회결과를 출력페이지 output.jsp
+		// db조회, 조회결과를 출력페이지 output.jsp
 		CustomerService service = new CustomerService();
 		List<CustomerVO> list = service.searchAll();
-		
+
 		req.setAttribute("customerList", list);
-		
+
 		req.getRequestDispatcher("customer/customerList.jsp").forward(req, res);
 
 	}

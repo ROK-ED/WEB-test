@@ -34,6 +34,4 @@ public class CustomerService {
 		return dao.loginCheck(cId, cPw);
 	}
 
-
 }
-

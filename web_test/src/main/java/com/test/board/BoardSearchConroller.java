@@ -27,65 +27,46 @@ public class BoardSearchConroller implements Controller {
 		BoardService service = new BoardService();
 		BoardVO vo = service.search(Integer.parseInt(bId)); 
 		
-		req.setAttribute("board", vo);
-		System.out.println(vo.getbId()); 
+		req.setAttribute("board", vo); 
 
 		//댓글
-		CommService cmService = new CommService();
-		List<CommVO> cmList = cmService.searchAll();
-		req.setAttribute("commList", cmList);
-		System.out.println(cmList);
-		req.getRequestDispatcher("board/boardSearch.jsp").forward(req, res);
-		
-		if (job.equals("search")) {
-			System.out.println("search");
-			req.getRequestDispatcher("board/boardSearch.jsp").forward(req, res);
-
-		} else if (job.equals("update")) {
-			System.out.println("update");
-			req.getRequestDispatcher("board/boardUpdate.jsp").forward(req, res);
-
-
-		} else if (job.equals("delete")) {
-			System.out.println("delete");
-			req.setAttribute("board", service.delete(Integer.parseInt(bId)));
-			List<BoardVO> list = service.searchAll();
-			req.getRequestDispatcher("board/boardList.jsp").forward(req, res);
-		}
-		
-		
-		//댓글
-		CommVO cmvo = new CommVO();
-		
-		
-		String job_c = req.getParameter("job_c");
-		
-		
 		String cmId = req.getParameter("cmId");
-		String tId = req.getParameter("tId");
+		String tId = bId;
 		String cmContent = req.getParameter("cmContent");
 		String cId = req.getParameter("cId");
 		String cPw = req.getParameter("cPw");
 		String cmDate = req.getParameter("cmDate");
 		
-		if(job_c.equals("insert")) {
-			System.out.println("insert");
-			req.setAttribute("comm", cmService.insert(cmvo));
+		
+		CommVO cmvo = new CommVO();
+		CommService cmService = new CommService();
+		List<CommVO> cmList = cmService.searchAll(Integer.parseInt(tId));
+		
+		
+		if (job.equals("search")) {
+			System.out.println("search");
+			req.setAttribute("commList", cmList);
+			System.out.println(cmList);
 			req.getRequestDispatcher("board/boardSearch.jsp").forward(req, res);
-			
-		} else if(job_c.equals("update")) {
-			System.out.println("update");
-			req.setAttribute("comm", cmService.update(cmvo));
-			req.getRequestDispatcher("board/boardSearch.jsp").forward(req, res);
-		} else if(job_c.equals("delete")) {
-			System.out.println("delete");
-			req.setAttribute("comm", cmService.delete(Integer.parseInt(cmId)));
-			req.getRequestDispatcher("board/boardSearch.jsp").forward(req, res);
-		}
 
-		
-		
+			
+		} else if (job.equals("update")) {
+			System.out.println("update");
+			cmService.update(cmvo);
+			req.setAttribute("comm", cmList);
+			req.getRequestDispatcher("board/boardUpdate.jsp").forward(req, res);
+
+		} else if (job.equals("delete")) {
+			
+			System.out.println("delete");
+			
+			req.setAttribute("board", service.delete(Integer.parseInt(bId)));
+			
+			List<BoardVO> list = service.searchAll();
+			
+			req.setAttribute("boardList", list);
+			req.getRequestDispatcher("board/boardList.jsp").forward(req, res);
+		}
 		
 	}
-
 }

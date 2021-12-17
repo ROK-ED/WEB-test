@@ -97,7 +97,4 @@ public class CustomerVO {
 				+ ", email=" + email + ", cDate=" + cDate + ", authority=" + authority + "]";
 	}
 
-	
-
 }
-
