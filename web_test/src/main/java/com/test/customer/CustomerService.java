@@ -5,6 +5,16 @@ import java.util.List;
 public class CustomerService {
 	CustomerDAO dao = new CustomerDAO();
 	
+	// 회원 탈퇴
+	public CustomerVO delete(String cId) {
+		return dao.customerDelete(cId);
+	}
+	
+	// 회원 정보수정
+	public CustomerVO update(CustomerVO vo) {
+		return dao.customerUpdate(vo);
+	}
+	
 	// 회원 상세정보
 	public CustomerVO searchOne(String cId) {
 		return dao.customerSearch(cId);

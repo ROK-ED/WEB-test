@@ -11,7 +11,7 @@
 <jsp:include page="menu.jsp"></jsp:include>
 
 <h3>시작화면</h3>
-<h3>${sessionScope.cName }님, 환영합니다.</h3>
+
 
 
 </body>

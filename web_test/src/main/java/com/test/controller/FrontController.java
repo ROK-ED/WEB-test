@@ -2,6 +2,7 @@ package com.test.controller;
 
 
 
+
 import java.io.IOException;
 import java.util.HashMap;
 
@@ -11,7 +12,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.test.board.BoardDeleteConroller;
 import com.test.board.BoardInsertContoller;
 import com.test.board.BoardListConroller;
 import com.test.board.BoardSearchConroller;
@@ -19,7 +19,6 @@ import com.test.board.BoardSearchConroller;
 //import com.test.product.ProductDeleteConroller;
 
 import com.test.board.BoardUpdateConroller;
-import com.test.customer.CustomerDeleteConroller;
 import com.test.customer.CustomerInsertContoller;
 import com.test.customer.CustomerListConroller;
 import com.test.customer.CustomerSearchConroller;
@@ -57,14 +56,7 @@ public class FrontController extends HttpServlet {
 		list.put("/customerList.do", new CustomerListConroller());
 		list.put("/customerSearch.do", new CustomerSearchConroller());
 		list.put("/customerUpdate.do", new CustomerUpdateConroller());
-		list.put("/customerDelete.do", new CustomerDeleteConroller());
-		
-		//customer
-		list.put("/customerInsert.do", new CustomerInsertContoller());
-		list.put("/customerList.do", new CustomerListConroller());
-		list.put("/customerSearch.do", new CustomerSearchConroller());
-		list.put("/customerUpdate.do", new CustomerUpdateConroller());
-		list.put("/customerDelete.do", new CustomerDeleteConroller());
+			
 		
 		//로그인
 		list.put("/login.do", new LoginController());

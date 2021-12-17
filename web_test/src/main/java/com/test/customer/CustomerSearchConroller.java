@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.test.controller.Controller;
+import com.test.product.ProductService;
+import com.test.product.ProductVO;
 
 
 public class CustomerSearchConroller implements Controller {
@@ -33,19 +35,20 @@ public class CustomerSearchConroller implements Controller {
 		} else if (job.equals("update")) {
 			System.out.println("update");
 
-//			req.getRequestDispatcher("product/productUpdateForm.jsp").forward(req, res);
+			req.getRequestDispatcher("customer/customerUpdateForm.jsp").forward(req, res);
 
 		} else if (job.equals("delete")) {
 			System.out.println("delete");
-//			// 삭제
-//			req.setAttribute("product", service.delete(pId));
-//			
-//			// 삭제 후 전체 리스트로
-//			List<ProductVO> list = service.searchAll();
-//			
-//			req.setAttribute("productList", list);
-//			
-//			req.getRequestDispatcher("product/productList.jsp").forward(req, res);
+			// 삭제
+			req.setAttribute("customer", service.delete(cId));
+			
+			// 삭제  후 전체 리스트로
+			ProductService serviceProduct = new ProductService();
+			List<ProductVO> list = serviceProduct.searchAll();
+
+			req.setAttribute("productList", list);
+			
+			req.getRequestDispatcher("product/productList.jsp").forward(req, res);
 
 		}
 		

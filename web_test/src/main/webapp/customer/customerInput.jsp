@@ -12,7 +12,7 @@
 <form action='../customerInsert.do' method='post'>
 		<input type="radio" name="authority" value="일반회원" checked>일반회원
 		<input type="radio" name="authority" value="관리자">관리자<br>
-		ID: <input type='text' name='cId'><br> 
+		아이디: <input type='text' name='cId'><br> 
 		비밀번호: <input type='password' name='cPw'><br> 
 		이름: <input type='text' name='cName'><br> 
 		주소: <input type='text' name='adr'><br> 
