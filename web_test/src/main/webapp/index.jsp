@@ -6,13 +6,12 @@
 <head>
 <meta charset="UTF-8">
 <title>index.jsp</title>
+<link rel = "stylesheet" href = "indexstyle.css">
 </head>
 <body>
 <jsp:include page="menu.jsp"></jsp:include>
 
 <h3>시작화면</h3>
-
-
 
 </body>
 </html>
