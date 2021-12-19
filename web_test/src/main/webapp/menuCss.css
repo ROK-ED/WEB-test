@@ -1,0 +1,32 @@
+@charset "UTF-8";
+*{
+	box-sizing: border-box;
+	color: black;
+	border: 0;
+	margin: 0;
+	font-size: 20px;
+}
+#contain{
+	border: 1px solid blue;
+	float:left;	
+	width:100%;
+}
+
+#main{
+	float:left;
+	text-align: center;
+	border: 1px solid red;
+	width:70%;
+	/* height: 10%; */
+	font-size: 25px;
+}
+#log{
+	float:right;
+	width:30%;
+/* 	height: 10%; */
+	}
+	
+#ctl{
+	border: 1px solid blue;
+	
+}

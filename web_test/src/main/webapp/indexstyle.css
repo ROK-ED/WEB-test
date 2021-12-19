@@ -1,0 +1,12 @@
+@charset "UTF-8";
+*{
+	color: gray;
+	border: 0px;
+	margin: 0px;
+	font-size:12px
+}
+
+h3{
+    font-size: 23px;
+    text-align: center;
+}
