@@ -31,13 +31,13 @@ public class ProductDAO extends DAO {
 	// 상품 수정
 	public ProductVO productUpdate(ProductVO vo) {
 		String sql = "update product "//
-				+ "set pName = ?,"//
-				+ "originPrice = ?,"//
-				+ "salePrice = ?,"//
-				+ "pCount = ?,"//
-				+ "pContent = ?,"//
-				+ "pImage = ?,"//
-				+ "review = ?"//
+				+ "set pName = nvl(?,pName),"//
+				+ "originPrice = nvl(?,originPrice),"//
+				+ "salePrice = nvl(?,salePrice),"//
+				+ "pCount = nvl(?,pCount),"//
+				+ "pContent = nvl(?,pContent),"//
+				+ "pImage = nvl(?,pImage),"//
+				+ "review = nvl(?,review)"//
 				+ "where pId = ?";
 		connect();
 		try {

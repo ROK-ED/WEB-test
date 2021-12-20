@@ -28,6 +28,10 @@
 			<form action="${pageContext.request.contextPath }/logout.do" method='get'>
 				<input type='submit' value='로그아웃'>
 			</form>
+			<form action="ordCustomerList.do" method='get'>
+				<input type='hidden' name='cId' value='${sessionScope.cId }'>
+				<input type='submit' value='장바구니'>
+			</form>
 			
 		</c:otherwise>
 	</c:choose>
@@ -45,6 +49,7 @@
 	<c:if test="${sessionScope.authority == '관리자' }">
 			<a href="${pageContext.request.contextPath }/product/productInput.jsp">상품등록(관리자)</a>
 			<a href='${pageContext.request.contextPath }/customerList.do'>회원목록(관리자)</a>
+			<a href="${pageContext.request.contextPath }/ordList.do">전체주문(관리자)</a>
 		</c:if>
 	
 
