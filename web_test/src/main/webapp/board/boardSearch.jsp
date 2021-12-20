@@ -66,12 +66,12 @@
 			</table>	
 			<form action='commInsert.do' method='post'>
 			<br><br>댓글등록<br>
-			<input type="hidden" name = 'cmId' value='${comm.cmId }' > <!--cmId  -->
-			<input type="hidden" name = 'tId' value="${comm.tId }" > <!-- bId -->
-			<input type="hidden" name = 'cId' value='${comm.cId }'> <!-- cId -->
-			<input type="hidden" name = 'cmDate' value='${comm.cDate }'> <!-- cDate  -->
-			내용 :<input type='text' name='cmContent'> <!-- cmContent -->
-			비밀번호:<input type='password' name='cPW'> <!-- cPw -->
+			<input type="hidden" name = 'cmId' value='${comm.cmId }'>
+			<input type="hidden" name = 'tId'  value='${comm.tId }' >
+			<input type="hidden" name = 'cId'  value='${comm.cId }' >
+			<input type="hidden" name = 'cmDate' value='${comm.cDate }'>
+			내용 :<input type='text' name='cmContent'>
+			비밀번호:<input type='password' name='cPW'>
 			<input type='hidden' name='job' value='insert'>
 			<input type='submit' value='등록'><br>
 			</form>

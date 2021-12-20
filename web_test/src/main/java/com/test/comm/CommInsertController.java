@@ -25,8 +25,13 @@ public class CommInsertController implements Controller {
 		String cmDate = req.getParameter("cmDate");
 		String job = req.getParameter("job");
 		
-		System.out.println(1);
 		
+		  System.out.println("tid:" + tId);
+		  System.out.println("cmcontent:" + cmContent);
+		  System.out.println("cmid:" + cmId); System.out.println("cPw:" + cPw);
+		  System.out.println("cmDate:" + cmDate);
+		  System.out.println("tId:" + tId);
+		 
 		CommVO cmvo = new CommVO();
 		CommService cmService = new CommService();
 		List<CommVO> cmList = cmService.searchAll(Integer.parseInt(tId));
@@ -40,8 +45,7 @@ public class CommInsertController implements Controller {
 		cmvo.settId(Integer.parseInt(tId));
 		
 		
-		
-		
+	
 		
 		if (job.equals("insert")) {
 			System.out.println("insert");
