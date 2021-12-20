@@ -10,19 +10,40 @@
 <body>
 <jsp:include page="../menu.jsp"></jsp:include>
 
+
 <form action='../productInsert.do' name="registerProduct"
 			enctype="multipart/form-data" method='post'>
 <!-- <form action='../productInsert.do' method='post'> -->
-		상품코드: <input type='text' name='pId'><br> 
+
+	<div id="title"> 상품등록 </div>
+	<div id="text">상품코드</div>
+	<input type='text' name='pId'><br>
+	<div id="text">상품명</div>
+	<input type="number" name='originPrice'><br>
+	<div id="text">판매가</div>
+	<input type="number" name='originPrice'><br>
+	<div id="text">할인가</div>
+	<input type="number" name='salePrice'><br>
+	<div id="text">입고수량</div>
+	<input type="number" name='pCount'><br>
+	<div id="text">상세내용</div>
+	<input type='text' name='pContent'><br>
+	<div id="text">이미지</div>
+	<input type='file' name='pImage'><br>
+	<div id="text">평점</div>
+	<input type="text" name='review'><br>  
+		<input type='submit' value='등록'>
+
+		<!-- 상품코드: <input type='text' name='pId'><br> 
 		상품명: <input type='text' name='pName'><br> 
 		판매가: <input type="number" name='originPrice'><br>
 		할인가: <input type="number" name='salePrice'><br>  
 		입고수량: <input type="number" name='pCount'><br>
 		상세내용: <input type='text' name='pContent'><br> 
-		<!-- 이미지: <input type='text' name='pImage'><br>  -->
+		이미지: <input type='text' name='pImage'><br> 
 		이미지: <input type='file' name='pImage'><br>
 		평점: <input type="text" name='review'><br>  
-		<input type='submit' value='등록'>
+		<input type='submit' value='등록'> -->
 		
 	</form>
 

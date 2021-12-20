@@ -6,6 +6,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+
+
+</style>
 </head>
 <body>
 <a href="index.jsp">첫 페이지로</a>

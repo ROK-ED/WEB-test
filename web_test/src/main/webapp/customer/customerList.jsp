@@ -6,12 +6,34 @@
 <head>
 <meta charset="UTF-8">
 <title>customer/customerList.jsp</title>
-<link rel="stylesheet" href="customerList.css">
+<link rel="stylesheet" href="customerList.css"> <!--  왜적용이 안되지?? -->
+<style>
+*{
+	/* background-color: gray;   블랙변경 예정 */
+    color: white;
+}
+table{
+  width: 100%;
+  text-align: center;
+/*   color: white; */
+}
+#h3{
+	color: white;		
+	text-align: center;
+}
+th,td{
+/* color: white; */
+}
+
+/* 버튼 이미지 변경 요청 */
+
+
+</style>
 </head>
 <body>
 	<jsp:include page="../menu.jsp"></jsp:include>
 
-	<h3>회원목록</h3>
+	<div id="h3">회원목록</div>
 	<table id = "table" border='1'>
 		<thead>
 			<tr>

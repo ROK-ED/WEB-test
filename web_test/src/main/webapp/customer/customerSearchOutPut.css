@@ -1,0 +1,12 @@
+@charset "UTF-8";
+*{
+	background-color: black;
+    color: white;
+}
+#text{
+	margin: 19px 0;
+    font-size: 14px;
+    font-weight: 700;
+    color: red;
+
+}
