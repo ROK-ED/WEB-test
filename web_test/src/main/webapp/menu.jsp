@@ -28,6 +28,7 @@
 				<c:otherwise>
 			${sessionScope.cName }님(${sessionScope.authority }), 환영합니다.
 			<form action="customerSearch.do" method='get'>
+
 						<input type='hidden' name='cId' value='${sessionScope.cId }'>
 						<input type='hidden' name='job' value='search'> <input
 							type='submit' value='상세정보'>
@@ -38,8 +39,20 @@
 					</form>
 				</c:otherwise>
 
-			</c:choose>
+				<input type='hidden' name='cId' value='${sessionScope.cId }'>
+				<input type='hidden' name='job' value='search'> 
+				<input type='submit' value='상세정보'>
+			</form>
+			<form action="${pageContext.request.contextPath }/logout.do" method='get'>
+				<input type='submit' value='로그아웃'>
+			</form>
+			<form action="ordCustomerList.do" method='get'>
+				<input type='hidden' name='cId' value='${sessionScope.cId }'>
+				<input type='submit' value='장바구니'>
+			</form>
+			
 
+	</c:choose>
 			<!--컨트롤 바-->
 			<div>
 				<div id="ctl">
@@ -59,5 +72,23 @@
 			</div>
 		</header>
 	</div>
+
+	
+		
+
+
+	<a href="${pageContext.request.contextPath }/index.jsp">첫 페이지로</a>
+	<a href='${pageContext.request.contextPath }/productList.do'>전체상품</a>
+	<a href='${pageContext.request.contextPath }/boardList.do'>게시판</a>
+	
+	<c:if test="${sessionScope.authority == '관리자' }">
+			<a href="${pageContext.request.contextPath }/product/productInput.jsp">상품등록(관리자)</a>
+			<a href='${pageContext.request.contextPath }/customerList.do'>회원목록(관리자)</a>
+			<a href="${pageContext.request.contextPath }/ordList.do">전체주문(관리자)</a>
+		</c:if>
+	
+
+
+>>>>>>> refs/heads/main
 </body>
 </html>

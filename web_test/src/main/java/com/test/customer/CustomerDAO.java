@@ -32,10 +32,10 @@ public class CustomerDAO extends DAO {
 	// 회원 정보수정
 	public CustomerVO customerUpdate(CustomerVO vo) {
 		String sql = "update customer "//
-				+ "set cPw = ?,"//
-				+ "adr = ?,"//
-				+ "phone = ?,"//
-				+ "email = ?"//
+				+ "set cPw = nvl(?,cPw),"//
+				+ "adr = nvl(?,adr),"//
+				+ "phone = nvl(?,phone),"//
+				+ "email = nvl(?,email)"//
 				+ "where cId = ?";
 		connect();
 		try {
