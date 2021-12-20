@@ -91,12 +91,20 @@ public class BoardDAO extends DAO{
 	
 	//게시판 등록
    public BoardVO boardInsert(BoardVO vo) {
+	   String sql_seq = "select board_seq.nextval from board";
 	   String sql = "insert into board(bId, cId, bPw, bTitle, bContent) values(?,?,?,?,?)";
 	   connect();
 	   
+	   int seq = -1;
 	   try {
+		   stmt=conn.createStatement();
+		   rs= stmt.executeQuery(sql_seq);
+		   if(rs.next()) {
+			   seq= rs.getInt(1);
+		   }
+
 		psmt = conn.prepareStatement(sql);
-		psmt.setInt(1, vo.getbId());
+		psmt.setInt(1, seq);
 		psmt.setString(2, vo.getcId());
 		psmt.setString(3, vo.getbPw());
 		psmt.setString(4, vo.getbTitle());

@@ -22,7 +22,6 @@
 		</thead>
 		<tbody>
 			<c:forEach var="item" items="${requestScope.boardList }">
-			console.log(item);
 				<form action="boardSearch.do" method='get'>
 				<tr>
 					<td>${item.bId }</td>
@@ -31,9 +30,8 @@
 					<td>${item.bDate }</td>
 					
 					<td><input type='submit' value='상세보기'></td>
-				<%-- 	<td><input type='hidden' name="tId" value='${item.tId }'></td> --%>
-					<td><input type='hidden' name = "bId" value='${item.bId }'></td>
-					<td><input type='hidden' name = 'job' value='search'></td>
+					<input type='hidden' name = "bId" value='${item.bId }'>
+					<input type='hidden' name = 'job' value='search'>
 				</tr>
 				</form>
 			</c:forEach>

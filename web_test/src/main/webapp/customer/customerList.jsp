@@ -6,12 +6,13 @@
 <head>
 <meta charset="UTF-8">
 <title>customer/customerList.jsp</title>
+<link rel="stylesheet" href="customerList.css">
 </head>
 <body>
 	<jsp:include page="../menu.jsp"></jsp:include>
 
 	<h3>회원목록</h3>
-	<table border='1'>
+	<table id = "table" border='1'>
 		<thead>
 			<tr>
 				<th>아이디</th>

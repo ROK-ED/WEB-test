@@ -9,7 +9,8 @@
 <link rel="stylesheet" href="customerInput.css">
 </head>
 <body>
-<%-- <jsp:include page="../menu.jsp"></jsp:include> --%><div id="cuscon">
+<%-- <jsp:include page="../menu.jsp"></jsp:include> --%>
+<div id="cuscon">
 	<form action='../customerInsert.do' method='post'>
 	<div><h1>회원가입</h1></div>
 		<div id="text">회원구분</div>

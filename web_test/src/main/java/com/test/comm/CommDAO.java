@@ -10,16 +10,24 @@ public class CommDAO extends DAO{
 	
 	//댓글등록
 	public CommVO commInsert(CommVO vo) {
+		String sql_seq = "select comm_seq.nextval from comm";
 		String sql = "insert into comm(cmId, tId, cmContent, cId, cPw) values (?,?,?,?,?)";
 		connect();
 		
+		int seq = -1;
 		try {
+			stmt=conn.createStatement();
+			rs=stmt.executeQuery(sql_seq);
+			if(rs.next()) {
+				seq=rs.getInt(1);
+			}
+			
 			psmt=conn.prepareStatement(sql);
-			psmt.setInt(1, vo.getCmId());
+			psmt.setInt(1, seq);
 			psmt.setInt(2, vo.gettId());
 			psmt.setString(3, vo.getCmContent());
 			psmt.setString(4, vo.getcId());
-			psmt.setString(6, vo.getcPw());
+			psmt.setString(5, vo.getcPw());
 			
 			int r = psmt.executeUpdate();
 			System.out.println(r+"건 등록");
@@ -32,38 +40,24 @@ public class CommDAO extends DAO{
 		return vo;
 	}
 	
-	//댓글 수정
-
-	public CommVO commUpdate(CommVO vo) {
-		String sql = "update comm "
-				+ "set cmContent = ?"
-				+ " tId = ?,"
-				+ " cId = ?,"
-				+ " cPw = ?,"
-				+ " cmDate = ?"
-				+ "where cmId = ?";
-		connect();
-		
-		try {
-			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, vo.getCmContent());
-			psmt.setInt(2, vo.gettId());
-			psmt.setString(3, vo.getcId());
-			psmt.setString(4, vo.getcPw());
-			psmt.setString(5, vo.getCmDate());
-			psmt.setInt(6, vo.getCmId());
-			
-			int r = psmt.executeUpdate();
-			System.out.println(r +"건 삭제");
-			
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			disconnect();
-		}
-		
-		return vo;
-	}
+	/*
+	 * //댓글 수정
+	 * 
+	 * public CommVO commUpdate(CommVO vo) { String sql = "update comm " +
+	 * "set cmContent = ?" + " tId = ?," + " cId = ?," + " cPw = ?," + " cmDate = ?"
+	 * + "where cmId = ?"; connect();
+	 * 
+	 * try { psmt = conn.prepareStatement(sql); psmt.setString(1,
+	 * vo.getCmContent()); psmt.setInt(2, vo.gettId()); psmt.setString(3,
+	 * vo.getcId()); psmt.setString(4, vo.getcPw()); psmt.setString(5,
+	 * vo.getCmDate()); psmt.setInt(6, vo.getCmId());
+	 * 
+	 * int r = psmt.executeUpdate(); System.out.println(r +"건 삭제");
+	 * 
+	 * } catch (SQLException e) { e.printStackTrace(); } finally { disconnect(); }
+	 * 
+	 * return vo; }
+	 */
 	
 	
 	//댓글 삭제

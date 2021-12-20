@@ -16,14 +16,14 @@
 			<!--로그인창  -->
 			<c:choose>
 				<c:when test="${sessionScope.cId == null }">
-					<form idaction="login.do" method="post">
+					<form action="login.do" method="post">
 						<div id="log">
 							ID: <input type='text' name='cId' size="5"> PW: <input
 								type='password' name='cPw' size="5"> <input
 								type='submit' value='Login' size="5">
 						</div>
 					</form>
-					
+
 				</c:when>
 				<c:otherwise>
 			${sessionScope.cName }님(${sessionScope.authority }), 환영합니다.
@@ -42,17 +42,20 @@
 
 			<!--컨트롤 바-->
 			<div>
-		<div id="ctl">
-			<a href="${pageContext.request.contextPath }/index.jsp">첫 페이지로</a> <a
-				href='${pageContext.request.contextPath }/productList.do'>전체상품</a> <a
-				href='${pageContext.request.contextPath }/boardList.do'>게시판</a>
-			<a href='${pageContext.request.contextPath }/customer/customerInput.jsp'>회원가입</a>
-			<a href='${pageContext.request.contextPath }/customer/customerInput.jsp'>장바구니</a>	
-			<c:if test="${sessionScope.authority == '관리자' }">
-				<a href="${pageContext.request.contextPath }/product/productInput.jsp">상품등록(관리자)</a>
-				<a href='${pageContext.request.contextPath }/customerList.do'>회원목록(관리자)</a>
-			</c:if>
-			</div>
+				<div id="ctl">
+					<a href="${pageContext.request.contextPath }/index.jsp">첫 페이지로</a>
+					<a href='${pageContext.request.contextPath }/productList.do'>전체상품</a>
+					<a href='${pageContext.request.contextPath }/boardList.do'>게시판</a>
+					<a
+						href='${pageContext.request.contextPath }/customer/customerInput.jsp'>회원가입</a>
+					<a
+						href='${pageContext.request.contextPath }/customer/customerInput.jsp'>장바구니</a>
+					<c:if test="${sessionScope.authority == '관리자' }">
+						<a
+							href="${pageContext.request.contextPath }/product/productInput.jsp">상품등록(관리자)</a>
+						<a href='${pageContext.request.contextPath }/customerList.do'>회원목록(관리자)</a>
+					</c:if>
+				</div>
 			</div>
 		</header>
 	</div>

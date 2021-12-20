@@ -14,7 +14,6 @@ public class BoardInsertContoller implements Controller {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
-		String bId = req.getParameter("bId");
 		String cId = req.getParameter("cId");
 		String bDate = req.getParameter("bDate");
 		String bPw = req.getParameter("bPw");
@@ -25,7 +24,6 @@ public class BoardInsertContoller implements Controller {
 		BoardVO vo = new BoardVO();
 		vo.setbContent(bContent);
 		vo.setbDate(bDate);
-		vo.setbId(Integer.parseInt(bId));
 		vo.setbPw(bPw);
 		vo.setbTitle(bTitle);
 		vo.setcId(cId);

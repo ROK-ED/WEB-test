@@ -30,8 +30,8 @@ public class BoardSearchConroller implements Controller {
 		req.setAttribute("board", vo); 
 
 		//댓글
-		String cmId = req.getParameter("cmId");
 		String tId = bId;
+		String cmId = req.getParameter("cmId");
 		String cmContent = req.getParameter("cmContent");
 		String cId = req.getParameter("cId");
 		String cPw = req.getParameter("cPw");
@@ -52,7 +52,6 @@ public class BoardSearchConroller implements Controller {
 			
 		} else if (job.equals("update")) {
 			System.out.println("update");
-			cmService.update(cmvo);
 			req.setAttribute("comm", cmList);
 			req.getRequestDispatcher("board/boardUpdate.jsp").forward(req, res);
 
