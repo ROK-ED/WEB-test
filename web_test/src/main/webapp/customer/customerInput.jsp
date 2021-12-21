@@ -6,10 +6,9 @@
 <head>
 <meta charset="UTF-8">
 <title>customer/customerInput.jsp</title>
- <link rel="stylesheet" href="customerInput.css">
+ <!-- <link rel="stylesheet" href="customerInput.css"> -->
 <style>
-
-/* *{
+ *{
 	margin: 5px;
     padding: 10px;
     height: 5px;
@@ -51,7 +50,7 @@
 #tab{
 text-align: center;
 }
- */
+
 </style>
 </head>
 <body>
