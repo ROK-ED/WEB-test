@@ -6,36 +6,51 @@
 <head>
 <meta charset="UTF-8">
 <title>customer/customerSearchOutPut.jsp</title>
-<link rel="stylesheet" href="customerSearchOutPut.css">
+<!-- <link rel="stylesheet" href="customerSearchOutPut.css"> -->
 
 <style>
 * {
-	/* background-color: gray;  블랙변경 */
-}
+    box-sizing: border-box;
+	background-color: black; /* 전체 배경색  */
+	color: white; /* 전체 글자색  */
 
 }
 table {
-	width: 100%;
-	text-align: center;
-/* 	color: white;
- */}
+	margin-left: auto; /* 가운데 정렬  */
+	margin-right: auto; /* 가운데 정렬  */
+	width: 80%; /* 테이블 가로 크기  */
+
+}
 
 th, td {
 /* 	color: white; */
+	color:wihte;
 }
 
 th {
-	width: 30%;
+	width: 20%;
+	text-align: center; /* 글자 가운데 정렬  */
 }
 
 #h3 {
-	/* color: white; */
-	text-align: center;
+	font-size: 30px; /* 글자크기 */
+	text-align: center; /* 가운데 정렬  */
+	
+
+}
+
+#button1{
+	float:right;
+	background-color: white; /* 전체 배경색  */
+	color: black; /* 전체 글자색  */
+	border-radius: 5px;
 }
 </style>
 </head>
 <body>
+<header>
 	<jsp:include page="../menu.jsp"></jsp:include>
+	</header>
 	<div id="h3">회원 상세정보</div>
 
 	<table>
@@ -78,14 +93,14 @@ th {
 	
 	<!--  우측하단배열 해야함 -->
 	<form action="customerSearch.do" method='get'>
-		<input type='hidden' name='cId' value='${customer.cId }'> <input
-			type='hidden' name='job' value='update'> <input type='submit'
-			value='정보수정(관리자)'>
+		<input type='hidden' name='cId' value='${customer.cId }'>
+		<input type='hidden' name='job' value='update'>
+		<input id="button1" type='submit' value='정보수정(관리자)'>
 	</form>
 	<form action="customerSearch.do" method='get'>
-		<input type='hidden' name='cId' value='${customer.cId }'> <input
-			type='hidden' name='job' value='delete'> <input type='submit'
-			value='탈퇴(관리자)'>
+		<input type='hidden' name='cId' value='${customer.cId }'>
+		<input type='hidden' name='job' value='delete'>
+		<input id="button1" type='submit' value='탈퇴(관리자)'>
 	</form>
 </body>
 </html>

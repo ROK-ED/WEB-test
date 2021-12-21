@@ -1,10 +1,12 @@
 *{
         box-sizing: border-box;
-        color:black;
+		background-color: black;
+        color: white;
 }
 header{
+	background-color: black;
+        color:white;
    float: left;   
-   border: 1px solid red;
    width: 100%;
 }
 aside{
@@ -13,12 +15,11 @@ aside{
 }
 nav{
    float:right;
-   border: 1px solid blue;
    font-size: 20px;
+   display: inline-block;
 }
 section{
    float: left;
-   border: 1px solid green;
    width: 100%;
    font-size: 20px;
    padding: 0px 10px 0px 10px;
@@ -27,4 +28,15 @@ section{
 #main{
    text-align: center;
    font-size: 30px;
+   background-color: black;
+       color:white;
 }
+
+#button{
+	border-radius: 5px;
+	background-color: white;
+        color:black;
+}
+a{
+ text-decoration-line: none
+ }

@@ -5,8 +5,52 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel = "stylesheet" href = "menuCss.css">
-<link> 
+<!-- <link rel = "stylesheet" href = "menuCss.css"> -->
+<style>
+*{
+        box-sizing: border-box;
+		background-color: black;
+        color: white;
+}
+header{
+	background-color: black;
+        color:white;
+   float: left;   
+   width: 100%;
+}
+aside{
+   float: left;
+   font-size: 20px;   
+}
+nav{
+   float:right;
+   font-size: 20px;
+   display: inline-block;
+}
+section{
+   float: left;
+   width: 100%;
+   font-size: 20px;
+   padding: 0px 10px 0px 10px;
+   margin: 5px 0px 5px 0px;
+}
+#main{
+   text-align: center;
+   font-size: 30px;
+   background-color: black;
+       color:white;
+}
+
+#button{
+	border-radius: 5px;
+	background-color: white;
+        color:black;
+}
+a{
+ text-decoration-line: none
+ }
+
+</style> 
 </head>
 <body>
 <header>
@@ -20,7 +64,7 @@
 			<form action="login.do" method="post" size="10">
 				ID: <input type='text' name='cId' size="10">
 				PW: <input type='password' name='cPw' size="10">
-				<input type='submit' value='Login'>
+				<input id="button" type='submit' value='Login'>
 			</form>
 			</nav>
 		</c:when>
@@ -30,15 +74,15 @@
 			<form id ="form" action="customerSearch.do" method='get'>
 				<input type='hidden' name='cId' value='${sessionScope.cId }'>
 				<input type='hidden' name='job' value='search'> 
-				<input type='submit' value='상세정보'>
+				<input id="button" type='submit' value='상세정보'>
 			</form>
 			
 			<form action="${pageContext.request.contextPath }/logout.do" method='get'>
-				<input type='submit' value='로그아웃'>
+				<input id="button" type='submit' value='로그아웃'>
 			</form>
 			<form action="ordCustomerList.do" method='get'>
 				<input type='hidden' name='cId' value='${sessionScope.cId }'>
-				<input type='submit' value='장바구니'>
+				<input id="button" type='submit' value='장바구니'>
 			</form>
 			</nav>
 		</c:otherwise>
@@ -47,6 +91,7 @@
 </header>
 	<!--컨트롤 바-->
 	<section>
+	<hr>
 	<a href='${pageContext.request.contextPath }/productList.do'>전체상품</a>
 	<a href='${pageContext.request.contextPath }/boardList.do'>게시판</a>
 	
@@ -56,6 +101,7 @@
 			<a href="${pageContext.request.contextPath }/ordList.do">전체주문(관리자)</a>
 		</c:if>
 	<a href='${pageContext.request.contextPath }/customer/customerInput.jsp'>회원가입</a>
+	<hr>
 </section>
 
 </body>

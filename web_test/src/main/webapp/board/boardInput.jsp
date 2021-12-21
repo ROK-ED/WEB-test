@@ -12,7 +12,9 @@
 </style>
 </head>
 <body>
-<a href="index.jsp">첫 페이지로</a>
+<header>
+	<jsp:include page="../menu.jsp"></jsp:include>
+</header>
 <form action ='../boardInsert.do' method='post'>
 	<input type="hidden" name='bId'>
 	고객아이디: <input type='text' name='cId'><br>

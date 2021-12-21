@@ -11,8 +11,6 @@
 	<jsp:include page="../menu.jsp"></jsp:include>
 	<!--  아이디 확인  -->
 
-	
-
 	<h3>상품목록</h3>
 	<div id="List">
 		<c:forEach var="product" items="${requestScope.productList }">
