@@ -37,8 +37,8 @@ public class OrdInsertConroller implements Controller {
 		
 		req.setAttribute("ordCusList", list);
 		
-		//res.setre
-		req.getRequestDispatcher("ord/ordCusList.jsp").forward(req, res);
+		res.sendRedirect("ordCustomerList.do");
+		//req.getRequestDispatcher("ordCustomerList.do").forward(req, res);
 		
 	}
 
