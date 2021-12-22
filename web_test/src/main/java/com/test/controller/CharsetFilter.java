@@ -30,6 +30,7 @@ public class CharsetFilter implements Filter {
 		//필터할 내용들
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html;charset=utf-8");
 		// pass the request along the filter chain
 		chain.doFilter(request, response);//서블릿 실행
 		//실행후 필요한 내용들

@@ -26,8 +26,11 @@ import com.test.customer.CustomerListConroller;
 import com.test.customer.CustomerSearchConroller;
 import com.test.customer.CustomerUpdateConroller;
 import com.test.ord.OrdCusListConroller;
+import com.test.ord.OrdDeleteConroller;
 import com.test.ord.OrdInsertConroller;
 import com.test.ord.OrdListConroller;
+import com.test.ord.OrdStateConroller;
+import com.test.ord.OrdUpdateConroller;
 import com.test.product.ProductInsertContoller;
 import com.test.product.ProductListConroller;
 import com.test.product.ProductSearchConroller;
@@ -53,6 +56,9 @@ public class FrontController extends HttpServlet {
 		list.put("/ordList.do", new OrdListConroller());
 		list.put("/ordCustomerList.do", new OrdCusListConroller());
 		list.put("/ordInsert.do", new OrdInsertConroller());
+		list.put("/ordUpdate.do", new OrdUpdateConroller());
+		list.put("/ordDelete.do", new OrdDeleteConroller());
+		list.put("/ordState.do", new OrdStateConroller());
 		
 		//board
 		list.put("/boardInsert.do", new BoardInsertContoller());

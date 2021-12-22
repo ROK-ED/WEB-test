@@ -9,7 +9,7 @@
 </head>
 <body>
 	<jsp:include page="../menu.jsp"></jsp:include>
-	
+	<c:if test="${sessionScope.authority == '관리자' }">
 	<h3>제품 상세정보</h3>
 	<form action="productSearch.do" method='get'>
 		<input type='hidden' name='pId' value='${product.pId }'> 
@@ -21,6 +21,7 @@
 		<input type='hidden' name='job' value='delete'> 
 		<input type='submit' value='제품삭제(관리자)'>
 	</form>
+	</c:if>
 	<!--장바구니  -->
 	<form action="ord"></form>	
 	<div>
@@ -28,7 +29,9 @@
 		<p><strong>상품코드 : </strong>${product.pId }</p>
 		<p><strong>상품명 : </strong>${product.pName }</p>
 		<p><strong>판매가 : </strong>${product.originPrice }</p>
-		<p><strong>할인가 : </strong>${product.salePrice }</p>
+		<c:if test="${product.salePrice != 0 }">
+			<p><strong>할인가 : </strong>${product.salePrice }</p>
+		</c:if>
 		<p><strong>재고 : </strong>${product.pCount }</p>
 		<p><strong>상세내용 : </strong>${product.pContent }</p>
 		<p><strong>평점 : </strong>${product.review }</p>

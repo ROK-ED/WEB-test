@@ -81,6 +81,7 @@ a{
 				ID: <input id="login" type='text' name='cId' size="10">
 				PW: <input id="login" type='password' name='cPw' size="10">
 				<input id="button" type='submit' value='Login'>
+				<div id="menuList" ><a href='${pageContext.request.contextPath }/customer/customerInput.jsp'>회원가입</a></div>
 			</form>
 			</nav>
 		</c:when>
@@ -111,17 +112,20 @@ a{
 	<section>
 	<hr>
 	<div id="com">
+	<a href="${pageContext.request.contextPath }/index.jsp">첫 페이지로</a>
 	<div id="menuList"><a href='${pageContext.request.contextPath }/productList.do'>전체상품</a></div>
 	<div id="menuList"><a href='${pageContext.request.contextPath }/boardList.do'>게시판</a></div>
+
 	
 	<c:if test="${sessionScope.authority == '관리자' }">
 			<div id="menuList"><a href="${pageContext.request.contextPath }/product/productInput.jsp">상품등록(관리자)</a></div>
 			<div id="menuList"><a href='${pageContext.request.contextPath }/customerList.do'>회원목록(관리자)</a></div>
 			<div id="menuList"><a href="${pageContext.request.contextPath }/ordList.do">전체주문(관리자)</a></div>
-		</c:if>
-	<div id="menuList" ><a href='${pageContext.request.contextPath }/customer/customerInput.jsp'>회원가입</a></div>
+	</c:if>
+	
 	<hr>
 	</div>
 	</section>
 
 </body>
+</html>
