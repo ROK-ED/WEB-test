@@ -1,0 +1,29 @@
+@charset "UTF-8";
+* {
+    box-sizing: border-box;
+
+	background-color: black; /* 전체 배경색  */
+	color: white; /* 전체 글자색  */
+}
+
+table {
+	margin-left: auto; /* 가운데 정렬  */
+	margin-right: auto; /* 가운데 정렬  */
+	width: 80%; /* 테이블 가로 크기  */
+	text-align: center; /* 글자 가운데 정렬  */
+}
+
+#h3 {
+	font-size: 30px; /* 글자크기 */
+	text-align: center; /* 가운데 정렬  */
+}
+
+th, td {
+	/* color: white; */
+	
+}
+#button{
+	border-radius: 5px;
+	background-color: white;
+        color:black;
+}

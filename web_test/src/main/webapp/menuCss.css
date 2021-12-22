@@ -1,0 +1,43 @@
+*{
+        box-sizing: border-box;
+		background-color: black;
+        color: white;
+}
+header{
+	background-color: black;
+        color:white;
+   float: left;   
+   width: 100%;
+}
+aside{
+   float: left;
+   font-size: 20px;   
+}
+nav{
+   float:right;
+   font-size: 20px;
+   display: inline-block;
+}
+section{
+   float: left;
+   width: 100%;
+   font-size: 20px;
+   padding: 0px 10px 0px 10px;
+   margin: 5px 0px 5px 0px;
+}
+#main{
+   text-align: center;
+   font-size: 30px;
+   background-color: black;
+       color:white;
+}
+
+#button2{
+	border-radius: 5px;
+	background-color: white;
+      color:black;
+      float:right;
+}
+a{
+ text-decoration-line: none
+ }

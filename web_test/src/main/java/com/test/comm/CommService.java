@@ -10,9 +10,9 @@ public class CommService {
 	}
 	
 	//게시글 수정
-	public CommVO update(CommVO vo) {
-		return dao.commUpdate(vo);
-	}
+	/*
+	 * public CommVO update(CommVO vo) { return dao.commUpdate(vo); }
+	 */
 	
 	
 	//게시글 삭제

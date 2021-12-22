@@ -1,0 +1,43 @@
+*{
+	margin: 5px;
+    padding: 10px;
+    height: 5px;
+    box-sizing: border-box;
+ 		background-color: black;
+        color: white;
+}
+#text{
+	margin: 15px 0;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+#val{
+	display: inline-block;
+    position: relative;
+    width: 40%;
+    height: 30px;
+    padding-right: 25px;
+    line-height: 29px;
+    background: #fff;
+    font-size: 15px;
+    color: black;
+    }
+    
+ h1{text-align: center;
+ }
+ 
+ #button{
+	border-radius: 5px;
+	background-color: white;
+        color:black;
+        width: 100pt;
+    height: 40pt;
+    margin: auto;
+    
+}
+
+#tab{
+text-align: center;
+
+}
