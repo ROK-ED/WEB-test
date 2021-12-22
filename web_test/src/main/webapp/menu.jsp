@@ -81,6 +81,7 @@ a{
 				ID: <input id="login" type='text' name='cId' size="10">
 				PW: <input id="login" type='password' name='cPw' size="10">
 				<input id="button" type='submit' value='Login'>
+				<div id="menuList" ><a href='${pageContext.request.contextPath }/customer/customerInput.jsp'>회원가입</a></div>
 			</form>
 			</nav>
 		</c:when>
@@ -121,7 +122,7 @@ a{
 			<div id="menuList"><a href='${pageContext.request.contextPath }/customerList.do'>회원목록(관리자)</a></div>
 			<div id="menuList"><a href="${pageContext.request.contextPath }/ordList.do">전체주문(관리자)</a></div>
 	</c:if>
-	<div id="menuList" ><a href='${pageContext.request.contextPath }/customer/customerInput.jsp'>회원가입</a></div>
+	
 	<hr>
 	</div>
 	</section>
