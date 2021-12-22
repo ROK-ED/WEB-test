@@ -8,15 +8,15 @@
 <!-- <link rel = "stylesheet" href = "menuCss.css"> -->
 <style>
 *{
-        box-sizing: border-box;
-		background-color: black;
-        color: white;
+   box-sizing: border-box;
+   background-color: black;
+   color: white;
 }
 header{
 	background-color: black;
-        color:white;
-   float: left;   
-   width: 100%;
+	color:white;
+	float: left;   
+	width: 100%;
 }
 aside{
    float: left;
@@ -38,7 +38,7 @@ section{
    text-align: center;
    font-size: 30px;
    background-color: black;
-       color:white;
+	color:white;
 }
 
 #button2{
@@ -72,28 +72,27 @@ a{
 <header>
 	<div id="main">메인타이틀</div>
 	<!--로그인창  -->
-	<aside><a href="${pageContext.request.contextPath }/index.jsp">첫 페이지로</a></aside>
+	<aside><a href="${pageContext.request.contextPath }/index.jsp">HOME</a></aside>
 	<c:choose>
 	
 		<c:when test="${sessionScope.cId == null }">
-		<nav>		
+		<nav>	
+			<form action="${pageContext.request.contextPath }/customer/customerInput.jsp" method="post">
+				<input id="button" type='submit' value='회원가입'>
+			</form>	
 			<form action="login.do" method="post" size="10">
 				ID: <input id="login" type='text' name='cId' size="10">
 				PW: <input id="login" type='password' name='cPw' size="10">
 				<input id="button" type='submit' value='Login'>
-				<div id="menuList" ><a href='${pageContext.request.contextPath }/customer/customerInput.jsp'>회원가입</a></div>
 			</form>
-			</nav>
+				<%-- <div id="menuList" ><a href='${pageContext.request.contextPath }/customer/customerInput.jsp'>회원가입</a></div> --%>
+			
+		</nav>
 		</c:when>
 		<c:otherwise>
 		<nav>  <!--상세정보 , 로그아웃, 장바구니 일자배열 해야함  -->
 			${sessionScope.cName }님(${sessionScope.authority }), 환영합니다.<br>
 			<div>
-			<form action="customerSearch.do" method='get'>
-				<input type='hidden' name='cId' value='${sessionScope.cId }'>
-				<input type='hidden' name='job' value='search'> 
-				<input id="button2" type='submit' value='상세정보'>
-			</form>
 			
 			<form action="${pageContext.request.contextPath }/logout.do" method='get'>
 				<input id="button2" type='submit' value='로그아웃'>
@@ -101,6 +100,11 @@ a{
 			<form action="ordCustomerList.do" method='get'>
 				<input type='hidden' name='cId' value='${sessionScope.cId }'>
 				<input id="button2" type='submit' value='장바구니'>
+			</form>
+			<form action="customerSearch.do" method='get'>
+				<input type='hidden' name='cId' value='${sessionScope.cId }'>
+				<input type='hidden' name='job' value='search'> 
+				<input id="button2" type='submit' value='상세정보'>
 			</form>
 			</div>
 			</nav>
@@ -112,7 +116,6 @@ a{
 	<section>
 	<hr>
 	<div id="com">
-	<a href="${pageContext.request.contextPath }/index.jsp">첫 페이지로</a>
 	<div id="menuList"><a href='${pageContext.request.contextPath }/productList.do'>전체상품</a></div>
 	<div id="menuList"><a href='${pageContext.request.contextPath }/boardList.do'>게시판</a></div>
 

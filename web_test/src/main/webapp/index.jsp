@@ -7,6 +7,11 @@
 <meta charset="UTF-8">
 <title>index.jsp</title>
 <link rel = "stylesheet" href = "indexstyle.css">
+<style>
+img{
+width: 100%
+}
+</style>
 </head>
 <body>
 <jsp:include page="menu.jsp"></jsp:include>
