@@ -26,7 +26,8 @@ th {
 
 #h3 {
 	font-size: 30px; /* 글자크기 */
-	text-align: center; /* 가운데 정렬  */
+	
+-align: center; /* 가운데 정렬  */
 	
 
 }
@@ -37,7 +38,10 @@ th {
 	color: black; /* 전체 글자색  */
 	border-radius: 5px;
 }
-
+#text {
+	background-color: white; /* 전체 배경색  */
+	color: black; /* 전체 글자색  */
+	}
 </style>
 </head>
 <body>
@@ -71,13 +75,12 @@ th {
 			</tr>
 			<tr>
 				<th>비밀번호</th>
-				<td><input type='password' name='bPw'>
+				<td><input id="text" type='password' name='bPw'>
 					<form action="boardSearch.do" method='get'>
-						<input type='hidden' name="bId" value='${board.bId }'> <input
-							type='hidden' name="bPw" value='${board.bPw }'> <input
-							type='hidden' name='job' value='update'>
-							<input id="button1"
-							type='submit' value='수정'>
+						<input type='hidden' name="bId" value='${board.bId }'>
+						<input type='hidden' name="bPw" value='${board.bPw }'>
+						<input type='hidden' name='job' value='update'>
+						<input id="button1" type='submit' value='수정'>
 							
 					</form>
 					<form action="boardSearch.do" method='post'>
@@ -114,8 +117,8 @@ th {
 						<input type="hidden" name="cPw" value='${items.cPw }'>
 						<input type="hidden" name='cmId' value='${items.cmId }'>
 						<input type="hidden" name="job" value='delete'>
-						<td><input type="password" name="cPw"> <input
-							type='submit' value='삭제'></td>
+						<td><input id="text" type="password" name="cPw">
+						<input type='submit' value='삭제'></td>
 					</tr>
 				</c:forEach>
 			</form>
@@ -133,10 +136,10 @@ th {
 		 <input type="hidden" name='cId' value='${comm.cId }'>
 		 <input type="hidden" name='cmDate'	value='${comm.cDate }'>
 		<td>
-		<input type='text' 	name='cmContent'>
+		<input id="text" type='text' 	name='cmContent'>
 		</td>
 		<th>비밀번호</th>
-		<td><input type='password' name='cPW'></td>
+		<td><input id="text" type='password' name='cPW'></td>
 		<input type='hidden' name='job' value='insert'>
 		<input id="button1" type='submit' value='등록'>
 	</form>

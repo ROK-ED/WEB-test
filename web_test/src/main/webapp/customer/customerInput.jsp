@@ -57,7 +57,7 @@ text-align: center;
 <%-- <jsp:include page="../menu.jsp"></jsp:include> --%>
 <div id="cuscon">
 	<form action='../customerInsert.do' method='post'>
-	<div><h1>회원가입</h1></div>
+	<div id="h3">회원가입</div>
 		<div id="text">회원구분</div>
 		<div>
 		<input id="radio1" type="radio" name="authority" value="일반회원" checked>일반회원

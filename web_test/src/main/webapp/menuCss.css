@@ -32,10 +32,11 @@ section{
        color:white;
 }
 
-#button{
+#button2{
 	border-radius: 5px;
 	background-color: white;
-        color:black;
+      color:black;
+      float:right;
 }
 a{
  text-decoration-line: none

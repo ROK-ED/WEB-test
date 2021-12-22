@@ -6,10 +6,24 @@
 <head>
 <meta charset="UTF-8">
 <title>ord/ordList.jsp</title>
+<style>
+#h3 {
+	font-size: 30px; /* 글자크기 */
+	text-align: center; /* 가운데 정렬  */
+}
+
+table {
+	margin-left: auto; /* 가운데 정렬  */
+	margin-right: auto; /* 가운데 정렬  */
+	width: 80%; /* 테이블 가로 크기  */
+	text-align: center;
+}
+
+</style>
 </head>
 <body>
 <jsp:include page="../menu.jsp"></jsp:include>
-<h3>전체 주문 확인</h3>
+<div id="h3">전체주문확인</div>
 
 <table border='1'>
 		<thead>

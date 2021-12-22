@@ -19,7 +19,7 @@ table {
 	margin-left: auto; /* 가운데 정렬  */
 	margin-right: auto; /* 가운데 정렬  */
 	width: 80%; /* 테이블 가로 크기  */
-
+	padding: 5px;
 }
 
 th, td {
@@ -27,8 +27,12 @@ th, td {
 	color:wihte;
 }
 
+tr{
+	    height: 50px;
+	
+}
 th {
-	width: 20%;
+	width: 60%;
 	text-align: center; /* 글자 가운데 정렬  */
 }
 

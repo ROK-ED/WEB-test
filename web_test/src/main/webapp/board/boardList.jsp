@@ -37,7 +37,6 @@ background-color: white; /* 전체 배경색  */
 	<jsp:include page="../menu.jsp"></jsp:include>
 </header>
 <section>
-	
 	<div id="h3">게시판 목록</div>
 	<div>
 	<table border='1'>
