@@ -8,7 +8,7 @@
 <title>customer/customerInput.jsp</title>
  <!-- <link rel="stylesheet" href="customerInput.css"> -->
 <style>
- *{
+ #cuscon{
 	margin: 5px;
     padding: 10px;
     height: 5px;
@@ -16,13 +16,13 @@
  		background-color: black;
         color: white;
 }
-#text{
+ #cuscon #text{
 	margin: 15px 0;
     font-size: 14px;
     font-weight: 700;
 }
 
-#val{
+ #cuscon #val{
 	display: inline-block;
     position: relative;
     width: 40%;
@@ -34,10 +34,10 @@
     color: black;
     }
     
- h1{text-align: center;
+ #cuscon  h1{text-align: center;
  }
  
- #button{
+ #cuscon #button{
 	border-radius: 5px;
 	background-color: white;
         color:black;
@@ -47,14 +47,14 @@
     
 }
 
-#tab{
+ #cuscon #tab{
 text-align: center;
 }
 
 </style>
 </head>
 <body>
-<%-- <jsp:include page="../menu.jsp"></jsp:include> --%>
+<jsp:include page="../menu.jsp"></jsp:include>
 <div id="cuscon">
 	<form action='../customerInsert.do' method='post'>
 	<div id="h3">회원가입</div>

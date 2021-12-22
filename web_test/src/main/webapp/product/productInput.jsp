@@ -21,8 +21,6 @@ background-color: white; /* 전체 배경색  */
 </head>
 <body>
 <jsp:include page="../menu.jsp"></jsp:include>
-<h3>상품등록</h3>
-
 
 <form action='../productInsert.do' name="registerProduct"
 			enctype="multipart/form-data" method='post'>
