@@ -9,6 +9,7 @@
 </head>
 <body>
 <jsp:include page="../menu.jsp"></jsp:include>
+<h3>상품등록</h3>
 
 <form action='../productInsert.do' name="registerProduct"
 			enctype="multipart/form-data" method='post'>
@@ -16,7 +17,7 @@
 		상품코드: <input type='text' name='pId'><br> 
 		상품명: <input type='text' name='pName'><br> 
 		판매가: <input type="number" name='originPrice'><br>
-		할인가: <input type="number" name='salePrice'><br>  
+		할인가: <input type="number" name='salePrice' value='0'><br>  
 		입고수량: <input type="number" name='pCount'><br>
 		상세내용: <input type='text' name='pContent'><br> 
 		<!-- 이미지: <input type='text' name='pImage'><br>  -->

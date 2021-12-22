@@ -35,24 +35,16 @@
 			
 		</c:otherwise>
 	</c:choose>
-
-	<!--컨트롤 바-->
-
-	
-		
-
-
+	<!--컨트롤 바  -->
 	<a href="${pageContext.request.contextPath }/index.jsp">첫 페이지로</a>
 	<a href='${pageContext.request.contextPath }/productList.do'>전체상품</a>
 	<a href='${pageContext.request.contextPath }/boardList.do'>게시판</a>
 	
 	<c:if test="${sessionScope.authority == '관리자' }">
-			<a href="${pageContext.request.contextPath }/product/productInput.jsp">상품등록(관리자)</a>
-			<a href='${pageContext.request.contextPath }/customerList.do'>회원목록(관리자)</a>
-			<a href="${pageContext.request.contextPath }/ordList.do">전체주문(관리자)</a>
-		</c:if>
+		<a href="${pageContext.request.contextPath }/product/productInput.jsp">상품등록(관리자)</a>
+		<a href='${pageContext.request.contextPath }/customerList.do'>회원목록(관리자)</a>
+		<a href="${pageContext.request.contextPath }/ordList.do">전체주문(관리자)</a>
+	</c:if>
 	
-
-
 </body>
 </html>

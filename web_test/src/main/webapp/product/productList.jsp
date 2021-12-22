@@ -24,7 +24,9 @@
 					<li>상품명: ${product.pName }</li>
 					<li>평점: ${product.review }</li>
 					<li>판매가: ${product.originPrice }</li>
-					<li>할인가: ${product.salePrice }</li> 
+						<c:if test="${product.salePrice != 0 }">
+					<li>할인가: ${product.salePrice }</li>
+					</c:if> 
 					<%-- <li name='pId'>상품코드: ${product.pId }</li> --%>
 					<input type='hidden' name='pId' value='${product.pId }'>
 					<input type='hidden' name='job' value='search'>

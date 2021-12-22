@@ -13,12 +13,12 @@
 	<form action="customerSearch.do" method='get'>
 			<input type='hidden' name='cId' value='${customer.cId }'> 
 			<input type='hidden' name='job' value='update'> 
-			<input type='submit' value='정보수정(관리자)'>
+			<input type='submit' value='정보수정'>
 	</form>
 	<form action="customerSearch.do" method='get'>
 		<input type='hidden' name='cId' value='${customer.cId }'> 
 		<input type='hidden' name='job' value='delete'> 
-		<input type='submit' value='탈퇴(관리자)'>
+		<input type='submit' value='탈퇴'>
 	</form>
 	<div>
 		<p><strong>아이디 : </strong>${customer.cId }</p>

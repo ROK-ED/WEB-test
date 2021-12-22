@@ -9,18 +9,18 @@
 </head>
 <body>
 	<jsp:include page="../menu.jsp"></jsp:include>
-	<h3>전체 주문 확인</h3>
+	<h3>장바구니</h3>
 
 	<table border='1'>
 		<thead>
 			<tr>
 				<!-- <th>장바구니번호</th> -->
 				<th>상품번호</th>
-				<th>주문고객</th>
+				<th>주문고객(ID)</th>
 				<th>장바구니등록일</th>
 				<th>상태</th>
 				<th>구매수량</th>
-				<th>추가기능</th>
+				<th>수량변경 및 삭제</th>
 			</tr>
 		</thead>
 		<tbody>
