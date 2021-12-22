@@ -24,33 +24,28 @@ public class CommInsertController implements Controller {
 		String cPw = req.getParameter("cPw");
 		String cmDate = req.getParameter("cmDate");
 		String job = req.getParameter("job");
-		
-		
-		  System.out.println("tid:" + tId);
-		  System.out.println("cmcontent:" + cmContent);
-		  System.out.println("cmid:" + cmId);
-		  System.out.println("cPw:" + cPw);
-		  System.out.println("cmDate:" + cmDate);
-		  System.out.println("tId:" + tId);
-		 
+				  
 		CommVO cmvo = new CommVO();
-		CommService cmService = new CommService();
-		List<CommVO> cmList = cmService.searchAll(Integer.parseInt(tId));
 		
-		
-		cmvo.setCmId(Integer.parseInt(cmId));
 		cmvo.setcId(cId);
 		cmvo.setCmContent(cmContent);
-		cmvo.setCmDate(cmDate);
+		// cmvo.setCmDate(cmDate); 
 		cmvo.setcPw(cPw);
-		cmvo.settId(Integer.parseInt(tId));
+		 cmvo.settId(Integer.parseInt(tId));
 		
+		System.out.println(cmvo);
+		System.out.println("여기는???");
 		
-	
+		CommService cmService = new CommService();
+		List<CommVO> cmList = cmService.searchAll(Integer.parseInt(tId));
+		cmService.insert(cmvo);
+			
 		
 		if (job.equals("insert")) {
 			System.out.println("insert");
 			req.setAttribute("commList", cmList);
+			req.setAttribute("comm", cmvo);
+			
 			System.out.println(cmList);
 			req.getRequestDispatcher("board/boardSearch.jsp").forward(req, res);
 
@@ -58,10 +53,11 @@ public class CommInsertController implements Controller {
 		}  else if (job.equals("delete")) {
 
 			System.out.println("delete");
-			req.setAttribute("comm", cmService.delete(Integer.parseInt(cmId), cPw));			
+			req.setAttribute("comm", cmService.delete(Integer.parseInt(cmId), cPw));	
+			//
 			List<CommVO> list = cmService.searchAll(Integer.parseInt(tId));
 			req.setAttribute("commList", list);
-			req.getRequestDispatcher("board/boardList.jsp").forward(req, res);
+			req.getRequestDispatcher("board/boardSearch.jsp").forward(req, res);
 		}
 		
 	}

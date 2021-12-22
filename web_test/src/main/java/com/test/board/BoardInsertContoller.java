@@ -19,8 +19,7 @@ public class BoardInsertContoller implements Controller {
 		String bPw = req.getParameter("bPw");
 		String bTitle = req.getParameter("bTitle");
 		String bContent = req.getParameter("bContent");
-		
-		
+			
 		BoardVO vo = new BoardVO();
 		vo.setbContent(bContent);
 		vo.setbDate(bDate);
@@ -28,6 +27,7 @@ public class BoardInsertContoller implements Controller {
 		vo.setbTitle(bTitle);
 		vo.setcId(cId);
 		
+		System.out.println(vo);
 		
 		//입력
 		BoardService service = new BoardService();

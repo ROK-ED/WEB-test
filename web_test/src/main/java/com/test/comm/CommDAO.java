@@ -8,6 +8,26 @@ import com.test.dao.DAO;
 
 public class CommDAO extends DAO{
 	
+	/*
+	 * //1건조회 public CommVO commSearch(int cmId, int tId) { String sql =
+	 * " select * from comm where cmId = ? and tId = ?"; connect();
+	 * 
+	 * try { psmt=conn.prepareStatement(sql); psmt.setInt(1, cmId); psmt.setInt(2,
+	 * tId); rs=psmt.executeQuery(); if(rs.next()) { CommVO vo = new CommVO();
+	 * vo.setcId(rs.getString("cId")); vo.setCmContent(rs.getString("cmContent"));
+	 * vo.setCmDate(rs.getString("cmDate")); vo.setCmId(rs.getInt("cmId"));
+	 * vo.setcPw(rs.getString("cPw")); vo.settId(rs.getInt("tId"));
+	 * 
+	 * return vo; }
+	 * 
+	 * } catch (SQLException e) {
+	 * 
+	 * e.printStackTrace(); } finally { disconnect(); }
+	 * 
+	 * 
+	 * return null; }
+	 */
+	
 	//댓글등록
 	public CommVO commInsert(CommVO vo) {
 		String sql_seq = "select comm_seq.nextval from comm";
@@ -21,7 +41,6 @@ public class CommDAO extends DAO{
 			if(rs.next()) {
 				seq=rs.getInt(1);
 			}
-			
 			psmt=conn.prepareStatement(sql);
 			psmt.setInt(1, seq);
 			psmt.setInt(2, vo.gettId());

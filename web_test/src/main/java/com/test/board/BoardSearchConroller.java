@@ -28,7 +28,14 @@ public class BoardSearchConroller implements Controller {
 		BoardVO vo = service.search(Integer.parseInt(bId)); 
 		
 		req.setAttribute("board", vo); 
-
+		
+		System.out.println("job=" + job);
+		System.out.println("bid=" +bId);
+		System.out.println("bpw=" +bPw);
+		System.out.println("btitle=" +bTitle);
+		System.out.println("bcontent=" +bContent);
+		
+		
 		//댓글
 		String tId = bId;
 		String cmId = req.getParameter("cmId");
@@ -42,11 +49,19 @@ public class BoardSearchConroller implements Controller {
 		CommService cmService = new CommService();
 		List<CommVO> cmList = cmService.searchAll(Integer.parseInt(tId));
 		
+		/*
+		 * CommVO comm = cmService.selectOne(Integer.parseInt(cmId),
+		 * Integer.parseInt(tId));
+		 */
+		
+		/* req.setAttribute("comm", comm); */
 		
 		if (job.equals("search")) {
 			System.out.println("search");
 			req.setAttribute("commList", cmList);
+			
 			System.out.println(cmList);
+			
 			req.getRequestDispatcher("board/boardSearch.jsp").forward(req, res);
 
 			
