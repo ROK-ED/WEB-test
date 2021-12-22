@@ -28,7 +28,8 @@ public class CommInsertController implements Controller {
 		
 		  System.out.println("tid:" + tId);
 		  System.out.println("cmcontent:" + cmContent);
-		  System.out.println("cmid:" + cmId); System.out.println("cPw:" + cPw);
+		  System.out.println("cmid:" + cmId);
+		  System.out.println("cPw:" + cPw);
 		  System.out.println("cmDate:" + cmDate);
 		  System.out.println("tId:" + tId);
 		 

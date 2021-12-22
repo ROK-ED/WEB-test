@@ -7,9 +7,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
-#root {
-	text-align: center; /* 가운데 정렬  */
-}
+
 
 #h3 {
 	font-size: 30px; /* 글자크기 */
@@ -35,10 +33,10 @@
 		<jsp:include page="../menu.jsp"></jsp:include>
 	</header>
 	<div id="h3">게시글 작성</div>
+	<form action='../boardInsert.do' method='post'>
 	<table>
 		<thead></thead>
 		<tbody>
-			<form action='../boardInsert.do' method='post'>
 				<tr>
 					<th>고객아이디</th>
 					<td><input id="text" type="hidden" name='bId'> <input
@@ -57,13 +55,13 @@
 					<th>게시글 비밀번호</th>
 					<td><input id="text" type='password' name='bPw'></td>
 				</tr>
-			</form>
-		</tbody>
-	</table>
+				<div id="root">
+					<input id="button1" type='submit' value='등록'>
+				</div>
+			</tbody>
+		</table>
+ </form>
 
-	<div id="root">
-		<input id="button1" type='submit' value='등록'>
-	</div>
 
 
 </body>

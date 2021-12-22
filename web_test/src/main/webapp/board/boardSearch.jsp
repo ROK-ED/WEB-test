@@ -26,10 +26,7 @@ th {
 
 #h3 {
 	font-size: 30px; /* 글자크기 */
-	
--align: center; /* 가운데 정렬  */
-	
-
+	text-align: center; /* 가운데 정렬  */
 }
 
 #button1{
