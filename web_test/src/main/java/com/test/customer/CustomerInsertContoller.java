@@ -6,6 +6,7 @@ import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.test.controller.Controller;
 import com.test.product.ProductService;
@@ -40,13 +41,22 @@ public class CustomerInsertContoller implements Controller {
 
 		req.setAttribute("customer", vo);
 
-		// 가입 후 전체 리스트로
-		ProductService serviceProduct = new ProductService();
-		List<ProductVO> list = serviceProduct.searchAll();
-
-		req.setAttribute("productList", list);
+		// 가입 후 로그인
+		HttpSession session = req.getSession();
 		
-		req.getRequestDispatcher("product/productList.jsp").forward(req, res);
+		session.setAttribute("cId", vo.getcId());
+		session.setAttribute("cName", vo.getcName());
+		session.setAttribute("authority", vo.getAuthority());
+		
+		req.getRequestDispatcher("index.jsp").forward(req, res);
+		
+		// 가입 후 전체 리스트로	
+//		ProductService serviceProduct = new ProductService();
+//		List<ProductVO> list = serviceProduct.searchAll();
+//
+//		req.setAttribute("productList", list);
+//		
+//		req.getRequestDispatcher("product/productList.jsp").forward(req, res);
 
 	}
 

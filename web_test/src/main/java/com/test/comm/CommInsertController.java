@@ -37,16 +37,27 @@ public class CommInsertController implements Controller {
 		System.out.println("여기는???");
 		
 		CommService cmService = new CommService();
-		List<CommVO> cmList = cmService.searchAll(Integer.parseInt(tId));
-		cmService.insert(cmvo);
-			
+		
+		//상세 게시글 리스트
+		
+		BoardService bordService = new BoardService();
+		BoardVO bordVo = bordService.search(Integer.parseInt(tId)); 
+		
+		req.setAttribute("board", bordVo);
+		
+		
 		
 		if (job.equals("insert")) {
-			System.out.println("insert");
-			req.setAttribute("commList", cmList);
+			//댓글 등록
+			cmService.insert(cmvo);
 			req.setAttribute("comm", cmvo);
 			
+			//댓글 등록 후 댓글 리스트 
+			List<CommVO> cmList = cmService.searchAll(Integer.parseInt(tId));
+			req.setAttribute("commList", cmList);
+
 			System.out.println(cmList);
+			
 			req.getRequestDispatcher("board/boardSearch.jsp").forward(req, res);
 
 			
@@ -54,9 +65,13 @@ public class CommInsertController implements Controller {
 
 			System.out.println("delete");
 			req.setAttribute("comm", cmService.delete(Integer.parseInt(cmId), cPw));	
-			//
-			List<CommVO> list = cmService.searchAll(Integer.parseInt(tId));
-			req.setAttribute("commList", list);
+								
+			//댓글 등록 후 댓글 리스트 
+			List<CommVO> cmList = cmService.searchAll(Integer.parseInt(tId));
+			req.setAttribute("commList", cmList);
+
+			System.out.println(cmList);
+			
 			req.getRequestDispatcher("board/boardSearch.jsp").forward(req, res);
 		}
 		

@@ -71,8 +71,8 @@ th {
 				<td>${board.bContent }</td>
 			</tr>
 			<tr>
-				<th>비밀번호</th>
-				<td><input id="text" type='password' name='bPw'>
+				<!-- <th>비밀번호</th> -->
+				<td><input id="text" type='hidden' name='bPw'>
 					<form action="boardSearch.do" method='get'>
 						<input type='hidden' name="bId" value='${board.bId }'>
 						<input type='hidden' name="bPw" value='${board.bPw }'>
@@ -98,7 +98,7 @@ th {
 					<td>댓글내용</td>
 					<td>작성자</td>
 					<td>작성일</td>
-					<td>비밀번호 / 삭제</td>
+					<td>삭제</td>
 				</tr>
 			</form>
 		</thead>
@@ -114,7 +114,7 @@ th {
 						<input type="hidden" name="cPw" value='${items.cPw }'>
 						<input type="hidden" name='cmId' value='${items.cmId }'>
 						<input type="hidden" name="job" value='delete'>
-						<td><input id="text" type="password" name="cPw">
+						<td><input id="text" type="hidden" name="cPw">
 						<input type='submit' value='삭제'></td>
 					</tr>
 				</c:forEach>

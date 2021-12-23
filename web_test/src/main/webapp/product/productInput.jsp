@@ -32,11 +32,11 @@ background-color: white; /* 전체 배경색  */
 	<div>상품코드</div>
 	<input id="text" type='text' name='pId'><br>
 	<div >상품명</div>
-	<input id="text" type="number" name='originPrice'><br>
+	<input id="text" type="text" name='pName'><br>
 	<div >판매가</div>
 	<input id="text" type="number" name='originPrice'><br>
 	<div >할인가</div>
-	<input id="text" type="number" name='salePrice'><br>
+	<input id="text" type="number" name='salePrice' value='0'><br>
 	<div >입고수량</div>
 	<input id="text" type="number" name='pCount'><br>
 	<div >상세내용</div>

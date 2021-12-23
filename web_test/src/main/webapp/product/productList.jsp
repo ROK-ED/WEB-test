@@ -10,7 +10,7 @@
 	<style>
 		#List{
 			margin:  0;
-			border: 1px solid rgba(128, 128, 128, 0.253);
+			/* border: 1px solid rgba(128, 128, 128, 0.253); */
 		}
 
 		.products{

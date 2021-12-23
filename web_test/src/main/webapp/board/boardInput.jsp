@@ -38,9 +38,9 @@
 		<thead></thead>
 		<tbody>
 				<tr>
-					<th>고객아이디</th>
+					<!-- <th>고객아이디</th> -->
 					<td><input id="text" type="hidden" name='bId'> <input
-						id="text" type='text' name='cId'></td>
+						id="text" type='hidden' name='cId' value='${sessionScope.cId }'></td>
 				</tr>
 				<tr>
 					<th>제목</th>
