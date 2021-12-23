@@ -11,7 +11,6 @@ table {
 	margin-left: auto; /* 가운데 정렬  */
 	margin-right: auto; /* 가운데 정렬  */
 	width: 80%; /* 테이블 가로 크기  */
-
 }
 
 th, td {

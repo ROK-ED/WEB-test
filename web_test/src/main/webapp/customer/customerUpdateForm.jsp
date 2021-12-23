@@ -37,9 +37,13 @@ background-color: white;
 #h3 {
 	font-size: 30px; /* 글자크기 */
 	text-align: center; /* 가운데 정렬  */
-	
-
 }
+
+#test{
+background-color: black;
+color:white;
+}
+
 </style>
 </head>
 
@@ -55,7 +59,7 @@ background-color: white;
 				<form action="customerUpdate.do" method="post">
 					<tr>
 						<th>아이디</th>
-						<td><input id="val" type="hidden" name='cId' value='${customer.cId }'>${customer.cId }</td>
+						<td id= "test"><input  type="hidden" name='cId' value='${customer.cId }'>${customer.cId }</td>
 					</tr>
 					<tr>
 						<th>비밀번호</th>
@@ -63,7 +67,7 @@ background-color: white;
 					</tr>
 					<tr>
 						<th>이름</th>
-						<td><input id="val" type="hidden" name='cName' value='${customer.cName }'>${customer.cName }</td>
+						<td id= "test" ><input type="hidden" name='cName' value='${customer.cName }'>${customer.cName }</td>
 					</tr>
 					<tr>
 						<th>주소</th>
@@ -71,18 +75,20 @@ background-color: white;
 					</tr>
 					<tr>
 						<th>연락처</th>
-						<td><input id="val" type='text' name='phone'
-							value='${customer.phone }'></td>
+						<td><input id="val" type='text' name='phone' value='${customer.phone }'></td>
 					</tr>
 					<tr>
 						<th>E-mail</th>
-						<td><input id="val" type='email' name='email'
-							value='${customer.email }'></td>
+						<td><input id="val" type='email' name='email' value='${customer.email }'>
+							
 					</tr>
 					<tr>
 					<th></th>
-					<td>
+					<td id="test">
+					<input type="hidden" name='cDate' value='${customer.cDate }'> <%-- ${customer.cDate } --%>
+					<input type="hidden" name='authority' value='${customer.authority }'><%-- ${customer.authority } --%>
 					<input id="button1" type='submit' value='수정'></td>
+					</td>
 					</tr>
 				</form>
 			</tbody>

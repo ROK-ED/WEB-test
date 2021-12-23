@@ -38,11 +38,11 @@ public class CommInsertController implements Controller {
 		
 		CommService cmService = new CommService();
 		List<CommVO> cmList = cmService.searchAll(Integer.parseInt(tId));
-		cmService.insert(cmvo);
 			
 		
 		if (job.equals("insert")) {
 			System.out.println("insert");
+			cmService.insert(cmvo);
 			req.setAttribute("commList", cmList);
 			req.setAttribute("comm", cmvo);
 			
