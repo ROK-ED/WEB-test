@@ -79,11 +79,16 @@ background-color: white;
 						<td><input id="val" type='email' name='email'
 							value='${customer.email }'></td>
 					</tr>
+					<tr>
+					<th></th>
+					<td>
+					<input id="button1" type='submit' value='수정'></td>
+					</tr>
 				</form>
 			</tbody>
 		</table>
 	</div>
-	<input id="button1" type='submit' value='수정'>
+	
 
 
 

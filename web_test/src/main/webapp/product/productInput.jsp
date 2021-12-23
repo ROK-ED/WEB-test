@@ -24,10 +24,12 @@ background-color: white; /* 전체 배경색  */
 
 <form action='../productInsert.do' name="registerProduct"
 			enctype="multipart/form-data" method='post'>
-<!-- <form action='../productInsert.do' method='post'> -->
 
 	<div id="h3"> 상품등록 </div>
-	<div >상품코드</div>
+	<table>
+	<thead></thead>
+	<tbody>
+	<div>상품코드</div>
 	<input id="text" type='text' name='pId'><br>
 	<div >상품명</div>
 	<input id="text" type="number" name='originPrice'><br>
@@ -44,7 +46,8 @@ background-color: white; /* 전체 배경색  */
 	<div >평점</div>
 	<input id="text" type="text" name='review'><br>  
 		<input type='submit' value='등록'>
-
+		</tbody>
+	</table>
 		<!-- 상품코드: <input type='text' name='pId'><br> 
 		상품명: <input type='text' name='pName'><br> 
 		판매가: <input type="number" name='originPrice'><br>
